@@ -1,14 +1,15 @@
-# NOTE: `hermes-lang-it` on the plugin catalog is taken (Lazzdaycod/hermes-lang-it).
-# Pick the final id before publishing — see README.
-name: hermes-lang-it
+name: hermes-lang-it-full
 version: 0.1.0
 description: >-
-  Italian (Italiano) Desktop language pack for Hermes Agent, generated from a
-  hand-reviewed typed catalog (full coverage incl. firstRun, themePicker and
-  function-backed keys as positional {0} templates). Core and TUI keep the
-  Italian catalogs already bundled with Hermes. Manifest-only plugin: no code,
+  Italian (Italiano) language pack for Hermes Desktop — 5,082 of 5,085 keys on
+  main (the 3 the pack format rejects are array/object leaves), including the
+  newest sections (firstRun, themePicker, connector accounts, update channel).
+  Core, CLI and TUI keep the Italian catalogs already bundled with Hermes.
+  Generated from a hand-reviewed typed catalog; functions ship as positional
+  {0} templates. Text-only plugin: no code paths beyond a no-op register(),
   no network, no env. Registering the pack never changes display.language; the
-  user opts in via `hermes config set display.language it`.
+  user opts in via `hermes config set display.language it` or the switcher.
+requires_hermes: ">=0.21.6"
 provides_locales:
   - id: it
     endonym: Italiano

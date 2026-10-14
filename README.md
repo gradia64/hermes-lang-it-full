@@ -1,4 +1,4 @@
-# hermes-lang-it — Italian Desktop language pack
+# hermes-lang-it-full — Italian Desktop language pack
 
 Italian UI translation for the **Hermes Agent desktop app**, generated from the
 hand-reviewed typed catalog maintained in
@@ -29,13 +29,15 @@ Then validate against the same rules as `hermes plugins validate`
 python3 scripts/validate.py
 ```
 
-## Status
+## Why `-full` and not `hermes-lang-it`
 
-The plugin id `hermes-lang-it` is already used on the catalog by
-[Lazzdaycod/hermes-lang-it](https://github.com/Lazzdaycod/hermes-lang-it)
-(core+TUI+Desktop, community). Before publishing this repo, decide between a
-distinct id, contributing the missing sections upstream to that pack, or
-proposing the bundled locale to NousResearch/hermes-agent (the fork's other
-lane). See the fork's `report.md` for the full analysis.
+The catalog id `hermes-lang-it` is taken by
+[Lazzdaycod/hermes-lang-it](https://github.com/Lazzdaycod/hermes-lang-it), an
+independent community translation. This pack is generated from the typed
+catalog of [gradia64/hermes-agent](https://github.com/gradia64/hermes-agent)
+(`gradia-desktop-it` branch) and tracks upstream main closely — it carried
+`firstRun`, `themePicker`, connector accounts and the update-channel picker
+from day one. Both packs can be installed; the last registered one wins for
+overlapping keys.
 
 License: MIT.
