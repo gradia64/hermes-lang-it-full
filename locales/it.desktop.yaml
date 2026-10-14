@@ -40,7 +40,7 @@ agents:
   workersActive: "{0} attivi"
 appTour:
   capabilities:
-    text: Skills, strumenti e plugin che Hermes può usare. Aggiungine altri qui.
+    text: Skill, strumenti e plugin che Hermes può usare. Aggiungine altri qui.
     title: Capacità
   composer:
     text: Dì cosa vuoi ottenere. Digita @ per portare un file.
@@ -685,10 +685,10 @@ commandCenter:
     hatchRow: Disegno del fotogramma {1} di {2}…
     hatchSaving: Ci siamo quasi…
     hatched: È schiusa!
-    hatching: La tua mascotta si sta schiudendo…
+    hatching: La tua mascotte si sta schiudendo…
     hatchingSub: Dandole vita…
-    namePlaceholder: Dai un nome alla tua mascotta
-    placeholder: Descrivi una mascotta da generare…
+    namePlaceholder: Dai un nome alla tua mascotte
+    placeholder: Descrivi una mascotte da generare…
     promptHint: Scrivi una descrizione e premi Invio per creare quattro versioni.
     readyHint: Premi Invio per creare quattro versioni dalla tua descrizione.
     referenceImageInvalid: Impossibile leggere quell’immagine di riferimento. Prova con PNG, JPG, WebP o GIF.
@@ -701,7 +701,7 @@ commandCenter:
     spawning: Creazione…
     staleBackend: Aggiorna Hermes per generare le mascotte.
     startOver: Ricomincia
-    title: Genera una mascotta
+    title: Genera una mascotte
   goTo: Vai a
   goToSession: Vai alla sessione
   hermesActiveSessions: Hermes {0} · Sessioni attive {1}
@@ -771,7 +771,7 @@ commandCenter:
       detail: Esplora gli output generati
       title: Artefatti
     capabilities:
-      detail: Skills, strumenti, server MCP e plugin
+      detail: Skill, strumenti, server MCP e plugin
       title: Capacità
     messaging:
       detail: Configura Telegram, Slack, Discord e altro
@@ -796,8 +796,8 @@ commandCenter:
   output: uscita
   paletteTitle: Palette dei comandi
   pets:
-    adoptFailed: Impossibile adottare quella mascotta.
-    empty: Nessuna mascotta corrispondente.
+    adoptFailed: Impossibile adottare quella mascotte.
+    empty: Nessuna mascotte corrispondente.
     error: Impossibile accedere alla galleria petdex.
     generatedTag: Generata
     installed: Installata
@@ -806,7 +806,7 @@ commandCenter:
     placeholder: Cerca mascotte…
     staleBackend: Riavvia Hermes per usare le mascotte; il backend è precedente a questa funzione.
     title: Mascotte
-    toggleFailed: Impossibile accendere la mascotta.
+    toggleFailed: Impossibile attivare la mascotte.
     turnOff: Disattiva
     turnOn: Attiva
   pinSession: Fissa sessione
@@ -849,7 +849,7 @@ commandCenter:
   toggleBrowser: Alterna browser
   topModels: Modelli principali
   topSkills: Skills principali
-  unpinSession: Sblocca sessione
+  unpinSession: Sfissa sessione
   updateHermes: Aggiorna Hermes
 common:
   apply: Applica
@@ -1044,7 +1044,7 @@ composer:
   queueMessage: Metti in coda il messaggio
   queueResume: Riprendi
   queueResumeTip: La coda è stata messa in pausa all’arresto; riprendi l’invio dei turni in coda
-  queueSend: Inviare
+  queueSend: Invia
   queueSendNext: Prossimo
   queueSteer: Reindirizza — incanala subito il turno in corso
   queueStuckBody: Un turno in coda non è stato inviato. È ancora in coda; riprova.
@@ -1064,7 +1064,7 @@ composer:
     workingTip: Clicca per annullare
   restoredDraftNotice: Il tuo messaggio non inviato è stato ripristinato
   restoredDraftUndo: Annulla
-  send: Inviare
+  send: Invia
   skillSuggestions:
     done: Aggiunta /{0}
     doneTip: La skill viene caricata quando invii
@@ -1216,7 +1216,7 @@ connectorsPage:
     saveFailed: Il server non è stato salvato.
     title: Connessione a un MCP personalizzato
     type: Tipo
-    typeHttp: HTTP trasmettibile
+    typeHttp: Streamable HTTP
     typeStdio: STDIO
     url: URL
     valuePlaceholder: valore
@@ -1614,7 +1614,7 @@ desktop:
   newChatsProfile: Le nuove chat useranno il profilo {0}.
   noClipboardImage: Nessuna immagine trovata negli appunti
   noProfileNamed: "Non c’è nessun profilo chiamato \"{0}\". Disponibili: {1}"
-  nothingToBranch: Non c’è niente da branchiare
+  nothingToBranch: Non c’è niente da ramificare
   openImage: Apri immagine
   pasteAttachFailed: Impossibile allegare il testo incollato
   pastedContent: Contenuto incollato
@@ -1708,7 +1708,7 @@ firstRun:
   installed: Installato
   intro:
     greeting: Ciao, sono Hermes.
-    plan: Prepariamo tutto per te. Poi combiniamo qualcosa di bello.
+    plan: Prepariamo tutto per te. Poi facciamo qualcosa di bello.
   loading: Caricamento…
   localModel:
     notNow: Non ora
@@ -1913,7 +1913,7 @@ keybinds:
       cron: Apri attività pianificate
       messaging: Apri messaggistica
       profiles: Apri profili
-      settings: Apri configurazione
+      settings: Apri le impostazioni
     profile:
       create: Crea profilo
       default: Passa al profilo predefinito
@@ -2143,7 +2143,7 @@ messaging:
   loading: Caricamento piattaforme di messaggistica...
   needsSetup: Richiede configurazione
   noTokenNeeded: Questa piattaforma non ha bisogno di un token qui. Usa la guida alla configurazione qui sopra e attivala qui sotto.
-  openDocs: Apri docs
+  openDocs: Apri la documentazione
   openLogs: Apri i log
   openSetupGuide: Apri guida alla configurazione
   pairingLockedOut: Troppi errori di approvazione — questa piattaforma è bloccata. Riprova più tardi.
@@ -2386,7 +2386,7 @@ onboarding:
   couldNotSave: Impossibile salvare la credenziale.
   defaultModel: Modello predefinito
   deviceCodeOpened: "Abbiamo aperto {0} nel tuo browser. Inserisci questo codice lì:"
-  docs: Docs di {0}
+  docs: Documentazione di {0}
   errorDetails: Dettagli
   externalPending: "{0} effettua l’accesso con la propria CLI. Esegui questo comando in un terminale e poi torna qui e scegli \"Accesso già effettuato\":"
   featuredPitch: "Un abbonamento, oltre 300 modelli frontier: il modo consigliato di usare Hermes"
@@ -3061,7 +3061,7 @@ settings:
       rateLimited:
         message: 🟡 Troppi addebiti in questo momento. Non è un errore di pagamento.
         title: Troppi addebiti in questo momento
-      remoteSpendingReconnect: "{0} Riconnettiti da Impostazioni -> Gateway per autorizzare di nuovo questo dispositivo."
+      remoteSpendingReconnect: "{0} Riconnettiti da Impostazioni → Gateway per autorizzare di nuovo questo dispositivo."
       remoteSpendingRevoked:
         messageByAdmin: Un amministratore ha interrotto la spesa remota per questo terminale.
         messageBySelf: Hai interrotto la spesa remota per questo terminale.
@@ -3199,7 +3199,7 @@ settings:
     usage:
       title: Utilizzo
     usageLabel: Utilizzo di {0}
-  closeSettings: Chiudi configurazione
+  closeSettings: Chiudi impostazioni
   computerUse:
     accessibility: Accessibilità
     driverHealth: Stato del driver
@@ -3915,7 +3915,7 @@ settings:
     fallbackAdd: Aggiungi fallback
     fallbackEmpty: Nessun modello di fallback; viene usato il modello predefinito a meno che non fallisca.
     followTask: Segui {0}
-    inheritMainEffort: eredita · effort del modello principale
+    inheritMainEffort: eredita · sforzo del modello principale
     inheritsFrom: eredita {0}
     loadFailed: Impossibile caricare i modelli
     loading: Caricamento della configurazione del modello...
@@ -3999,7 +3999,7 @@ settings:
     billing: Fatturazione
     gateway: Gateway
     keybinds: Scorciatoie da tastiera
-    keysSettings: Configurazione
+    keysSettings: Impostazioni
     keysTools: Strumenti
     mcp: MCP
     notifications: Notifiche
@@ -4586,7 +4586,7 @@ shell:
     sendsOnRoute: invia {0} su questa rotta
     thinking: Ragionamento
     ultra: Ultra
-    ultrafast: Ultrafast
+    ultrafast: Ultra-veloce
     updateFailed: Impossibile aggiornare l’opzione del modello
     useStandardSpeed: Usa velocità standard
     xhigh: Extra alto
@@ -4602,7 +4602,7 @@ shell:
     closeAgents: Chiudi agenti
     closeCommandCenter: Chiudi Centro comandi
     commit: commit {0}
-    commitsBehind: "{0} commits indietro rispetto a {1}"
+    commitsBehind: "{0} commit indietro rispetto a {1}"
     compressions: "Compressioni: {0}"
     connectionCloud: "Cloud: {0}"
     connectionCloudTooltip: Hermes Cloud · {0}
@@ -4865,7 +4865,7 @@ sidebar:
     draftSession: Bozza — non è ancora stato inviato nulla
     export: Esporta
     finishedUnread: Terminata — da leggere
-    handoffOrigin: Transferito da {0}
+    handoffOrigin: Trasferito da {0}
     hideTabBar: Nascondi barra delle schede
     markRead: Segna come letto
     markUnread: Segna come non letto
@@ -5083,12 +5083,12 @@ skills:
   refreshing: Aggiornamento skills
   searchSkills: Cerca skills...
   searchToolsets: Cerca set di strumenti...
-  skillArchivedMessage: Puoi ripristinarlo con hermes curator restore.
-  skillArchivedTitle: Skill archiviato
-  skillDisabled: Skill disattivato
-  skillEnabled: Skill attivato
-  skillUpdated: Skill aggiornato
-  skillsLoadFailed: Impossibile caricare gli skills
+  skillArchivedMessage: Puoi ripristinarla con hermes curator restore.
+  skillArchivedTitle: Skill archiviata
+  skillDisabled: Skill disattivata
+  skillEnabled: Skill attivata
+  skillUpdated: Skill aggiornata
+  skillsLoadFailed: Impossibile caricare le skill
   sortAlpha: A–Z
   sortLeastUsedAsc: ↑ Meno usate
   sortMostUsed: Più usate
@@ -5137,8 +5137,8 @@ statusStack:
     agentShip: Chiedi a Hermes di aprire una PR
     agentShipPrompt: Rivedi le modifiche correnti, esegui un commit con un messaggio convenzionale chiaro, fai push del branch e apri una pull request.
     agentShipUnavailable: La chat a cui appartengono queste modifiche non è sullo schermo.
-    ahead: "{0} in anticipo"
-    behind: "{0} in ritardo"
+    ahead: "{0} avanti"
+    behind: "{0} indietro"
     branchOffFrom: Nuovo branch da {0}
     changed: "{0} cambiamentoi"
     clean: Pulito
