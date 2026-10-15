@@ -1035,12 +1035,16 @@ composer:
   previewLabel: Anteprima di {0}
   previewUnavailable: Anteprima non disponibile
   promptSnippets: Frammenti di prompt…
+  queueCancelFailed: Impossibile rimuovere il turno in coda
   queueCollapse: Riduci
   queueDelete: Elimina
   queueDroppedBody: Questa voce è stata scartata in background perché la sua sessione non è stata ripristinata dopo diversi tentativi. Il resto della coda non è stato influenzato.
   queueDroppedTitle: Voce in coda scartata
   queueEdit: Modifica
   queueExpand: Espandi
+  queueLostDiscard: Scarta
+  queueLostDiscardTip: Il gateway si è riavviato a metà turno e non può completare questo. Scartalo perché possano girare i turni in coda dietro di lui.
+  queueLostNote: Turno perso durante il riavvio
   queueMessage: Metti in coda il messaggio
   queueResume: Riprendi
   queueResumeTip: La coda è stata messa in pausa all’arresto; riprendi l’invio dei turni in coda
@@ -1053,6 +1057,7 @@ composer:
   queuedPaused: "{0} in coda — in pausa"
   queuedTerminalSelectionExpiredBody: Questa selezione del terminale in coda non è più disponibile. Riseleziona le righe (Ctrl/Cmd+L) e rimetti il messaggio in coda.
   readingAloud: Lettura ad alta voce
+  redirect: Reindirizza l’esecuzione in corso
   removeAttachment: Rimuovi {0}
   repairSuggestions:
     done: "{0} riconnesso"
@@ -1062,6 +1067,7 @@ composer:
     tip: Una chiamata a {0} è appena fallita con un errore di connessione
     working: Riconnessione di {0}…
     workingTip: Clicca per annullare
+  restoreImageDraft: Ripristina bozza immagine
   restoredDraftNotice: Il tuo messaggio non inviato è stato ripristinato
   restoredDraftUndo: Annulla
   send: Invia
@@ -2687,6 +2693,23 @@ profiles:
   switchToProfile: Passa a {0}
   title: Profili
   unsavedChanges: Modifiche non salvate
+promptNotices:
+  legacySendUnconfirmed: Questo server non ha potuto confermare l’invio precedente di questo messaggio, quindi potrebbe essere già stato elaborato. Controlla la conversazione prima di inviarlo di nuovo.
+  sessionCommands:
+    countOne: "{0} messaggio in coda"
+    countOther: "{0} messaggi in coda"
+    queueFailed: impossibile mettere il messaggio in coda
+    queued: "in coda: \"{0}\""
+    retryNothing: niente da ritentare
+    retryUnsupported: "/retry: retry non supporta contenuti multimediali o parti sconosciute"
+    steerNoActiveTurn: "nessun turno attivo — in coda per il prossimo: \"{0}\""
+    steerQueued: "steer in coda — arriva dopo la prossima chiamata a strumenti: \"{0}\""
+    steerRejected: steer rifiutato — nessun turno attivo, messo in coda per il prossimo turno
+    steerUsage: "uso: /steer <prompt>"
+    undidOne: annullato {0} messaggio — il messaggio rimosso è nel compositore
+    undidOther: annullati {0} messaggi — il messaggio rimosso è nel compositore
+    undoNothing: niente da annullare
+    undoUsage: "uso: /undo [N]"
 prompts:
   gatewayDisconnected: Hermes non è connesso in questo momento. Riconnettiti e invialo di nuovo.
   reconnect: Riconnetti
@@ -2822,6 +2845,7 @@ sessionImport:
 settings:
   about:
     channel:
+      allChanges: Vedi tutte le modifiche
       branch: "Branch: {0}"
       change: Cambia
       description: Le installazioni stabili ricevono solo release pubblicate. Con l’opzione «ogni commit» segui il branch main man mano che le modifiche arrivano.
@@ -4119,11 +4143,6 @@ settings:
     rescan: Ripeti la ricerca
     reveal: Mostra nel gestore di file
     title: Plugin desktop
-  poolLimits:
-    backendIdleTimeoutAria: Tempo di inattività del backend in millisecondi
-    backendIdleTimeoutTitle: Tempo di inattività del backend
-    warmBotBackendsAria: Backend di bot a caldo
-    warmBotBackendsTitle: Backend di bot a caldo
   profileScope:
     appliesTo: Si applica a
     editsProfile: Le modifiche di questa pagina si applicano al profilo “{0}”.
@@ -4811,6 +4830,7 @@ sidebar:
     menuDelete: Elimina
     menuRename: Rinomina
     menuSetActive: Imposta come attivo
+    moveBusy: Ferma il turno in corso, poi sposta la chat
     moveFailed: Impossibile spostare la sessione
     moveNoFolder: Quel progetto non ha una cartella in cui spostarla
     moveNoProjects: Non ci sono altri progetti
