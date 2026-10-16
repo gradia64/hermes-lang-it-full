@@ -4579,6 +4579,7 @@ shell:
     modelLimitedTip: Questo modello ha raggiunto il suo limite e si azzera alle {0}. Gli altri modelli qui continuano a funzionare.
     modelResets: si azzera alle {0}
     noModels: Nessun modello trovato
+    pickDeferred: "{0} si applica dal prossimo messaggio"
     poolAccount: Account {0}
     poolAccounts: "{0} account"
     poolLimited: "{0}/{1} account limitati"
