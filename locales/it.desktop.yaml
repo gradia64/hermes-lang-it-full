@@ -4796,7 +4796,6 @@ sidebar:
     baseBranchNone: Nessun branch trovato
     baseBranchPlaceholder: Cerca branch…
     branchCreateWorktree: nuovo worktree
-    branchOff: "[object Object]"
     branchOpenExisting: apri
     branchPlaceholder: es. la-mia-feature
     branchSwitchHome: passa al principale
