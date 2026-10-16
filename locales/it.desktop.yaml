@@ -1458,11 +1458,11 @@ cron:
   close: Chiudi cron
   count: "{0} attività"
   createAction: Crea cron
-  createDesc: Pianifica un prompt da eseguire automaticamente. Usa la sintassi cron o una frase come "ogni 15 minuti".
+  createDesc: Pianifica un prompt da eseguire automaticamente. Usa la sintassi cron o una frase in inglese come "every 15m".
   createTitle: Nuova attività cron
   created: Cron creato
-  customHint: Espressione cron, o frasi come "ogni ora" o "giorni feriali alle 9".
-  customPlaceholder: 0 9 * * * o giorni feriali alle 9
+  customHint: Espressione cron, oppure frasi in inglese come "every hour" o "weekdays at 9am".
+  customPlaceholder: 0 9 * * *
   customScheduleLabel: Pianificazione personalizzata
   dayFallback: giorno {0}
   days:
@@ -5230,6 +5230,7 @@ statusStack:
     criterionLabel: Criterio
     dismissError: Scarta l’errore
     dismissLoop: Scarta il loop
+    dueWaitingForIdle: da eseguire — in attesa che l’agente sia libero
     gateAttempts: "{0}/{1} tentativi"
     gateCommand: Comando
     gateLastExit: "Codice di uscita: {0}"
@@ -5241,7 +5242,6 @@ statusStack:
     goalTurn: Turno {0}
     heartbeatActions: Azioni del heartbeat
     heartbeatActive: Heartbeat attivo
-    heartbeatDueWaitingForIdle: "in sospeso: in attesa di inattività"
     heartbeatEveryHours: ogni {0} h
     heartbeatEveryMinutes: ogni {0} min
     heartbeatEverySeconds: ogni {0} s
