@@ -19,6 +19,17 @@ def flat(node, prefix=''):
         else:
             yield path, value
 
+# The pack contract: every id in plugin.yaml's provides_locales needs a
+# core-surface locales/<id>.yaml (may be an empty mapping when Hermes already
+# bundles that core language — #138269 review). Mirrors hermes plugins validate.
+manifest = yaml.safe_load((root / 'plugin.yaml').read_text(encoding='utf-8'))
+declared = [str(loc.get('id')) for loc in (manifest.get('provides_locales') or [])]
+missing_core = [i for i in declared if not (root / 'locales' / f'{i}.yaml').is_file()]
+if missing_core:
+    print(f"declared locales without a core catalog (error): {missing_core}")
+    sys.exit(1)
+print(f"declared provides_locales: {declared} — core catalogs present")
+
 pack = dict(flat(yaml.safe_load((root / 'locales/it.desktop.yaml').read_text(encoding='utf-8'))))
 nontext = sorted(k for k, v in pack.items() if not isinstance(v, str))
 extra = sorted(set(pack) - ref)
