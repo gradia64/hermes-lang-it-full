@@ -1,0 +1,5 @@
+# Intentionally empty: Hermes already bundles the Italian core/TUI catalogs
+# (locales/it.yaml / it.tui.yaml upstream). This file satisfies the language-pack
+# contract — every provides_locales id needs a core-surface catalog — without
+# overriding any bundled key. All translations live in it.desktop.yaml.
+{}
