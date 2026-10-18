@@ -170,6 +170,7 @@ assistant:
     tier:
       community: community
       official: ufficiale
+      verified: verificato
   clarify:
     confirmAndContinueLabel: Conferma e continua
     gatewayDisconnected: Hermes non è connesso in questo momento. Riconnettiti e invialo di nuovo.
@@ -1882,6 +1883,10 @@ interfaceMode:
     description: Per parlare con Hermes. Barra laterale e chat; senza pannelli per terminale, file o diff.
     label: Semplice
   title: Modalità interfaccia
+keepAwakeOffer:
+  action: Tieni sveglio il computer mentre lavora
+  message: Hermes può mantenere il computer sveglio mentre un’attività è in esecuzione. Lo schermo si spegne comunque, e a batteria il computer potrebbe comunque andare in riposo.
+  title: Il computer si è spento mentre Hermes lavorava
 keybinds:
   actions:
     appearance:
@@ -2695,9 +2700,16 @@ profiles:
   unsavedChanges: Modifiche non salvate
 promptNotices:
   legacySendUnconfirmed: Questo server non ha potuto confermare l’invio precedente di questo messaggio, quindi potrebbe essere già stato elaborato. Controlla la conversazione prima di inviarlo di nuovo.
+  mcpReloadDeferred: "Questa chat è occupata: la modifica MCP si applica quando il turno in corso termina e MCP si ricarica, o alla riapertura della chat"
+  mcpReloadNotInChat: "{0} non è attivato in questa chat"
+  mcpReloadUnavailable: "Connessione non riuscita: {0}"
   sessionCommands:
     countOne: "{0} messaggio in coda"
     countOther: "{0} messaggi in coda"
+    queueEditKept: È partito o è stato rifiutato prima che la tua modifica fosse salvata. Il testo modificato è nel compositore.
+    queueEditKeptTitle: Messaggio in coda non modificato
+    queueEditUnconfirmed: Hermes non è riuscito a confermare la tua modifica. Salvala di nuovo per riprovare la stessa modifica; non viene mai messa in coda due volte.
+    queueEditUnconfirmedTitle: Modifica non confermata
     queueFailed: impossibile mettere il messaggio in coda
     queued: "in coda: \"{0}\""
     retryNothing: niente da ritentare
@@ -5074,8 +5086,6 @@ skills:
       secretSet: •••••••• (configurato)
       secretStoredAs: Viene salvato nel .env del profilo come {0}, mai in config.yaml; lascialo vuoto per conservare il valore attuale.
     settingsToggle: "Impostazioni: {0}"
-    tierCommunity: community
-    tierOfficial: ufficiale
     toggleFailed: Impossibile modificare {0}
     toolsetOff: Strumenti agente di {0} disattivati per {1}
     toolsetOn: Strumenti agente di {0} attivati per {1}
