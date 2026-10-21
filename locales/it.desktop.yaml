@@ -1090,12 +1090,6 @@ composer:
     /yolo: "Attiva o disattiva YOLO: approva automaticamente i comandi pericolosi"
   commonCommands: Comandi comuni
   couldNotPreview: Impossibile mostrare l’anteprima di {0}
-  cronSuggestions:
-    done: Contrassegnato per la pianificazione
-    doneTip: Invialo e l’agente creerà l’attività
-    label: Programma questo
-    prefix: "Configuralo come attività pianificata:"
-    tip: "\"{0}\" sembra ricorrente — eseguilo invece con una pianificazione"
   dictating: Dettatura in corso
   dropFiles: Rilascia i file per allegarli
   dropSession: Rilascia per collegare questa chat
@@ -1106,11 +1100,6 @@ composer:
   endShort: Termina
   files: File…
   folder: Cartella…
-  githubSuggestions:
-    done: È stato aggiunto /github-auth
-    doneTip: Invia il messaggio e l’agente ti guiderà per accedere a GitHub
-    label: Configura GitHub
-    tip: "GitHub funziona qui tramite le skill della CLI gh: clicca per collegare il tuo account"
   helpFooter: apre il pannello completo · backspace scarta
   hiddenQueued: Nota di configurazione
   hotkeyDescs:
@@ -1131,14 +1120,6 @@ composer:
   lookupNoMatches: Nessuna corrispondenza.
   lookupOr: o
   lookupTry: Prova
-  mcpSuggestions:
-    added: "{0} aggiunto"
-    addedTip: Connesso — i suoi strumenti sono pronti in questa chat
-    cancelTip: Clicca per annullare
-    connectFailed: Impossibile connettersi a {0}
-    connecting: Connessione a {0}…
-    label: Aggiungi {0}
-    tip: Suggerito perché hai menzionato "{0}" — clicca per connetterti
   message: Messaggio
   muteMic: Silenzia il microfono
   muted: Silenziato
@@ -1176,23 +1157,10 @@ composer:
   readingAloud: Lettura ad alta voce
   redirect: Reindirizza l’esecuzione in corso
   removeAttachment: Rimuovi {0}
-  repairSuggestions:
-    done: "{0} riconnesso"
-    doneTip: Le nuove credenziali sono attive in questa chat
-    failed: Impossibile riconnettere {0}
-    label: Riconnetti {0}
-    tip: Una chiamata a {0} è appena fallita con un errore di connessione
-    working: Riconnessione di {0}…
-    workingTip: Clicca per annullare
   restoreImageDraft: Ripristina bozza immagine
   restoredDraftNotice: Il tuo messaggio non inviato è stato ripristinato
   restoredDraftUndo: Annulla
   send: Invia
-  skillSuggestions:
-    done: Aggiunta /{0}
-    doneTip: La skill viene caricata quando invii
-    label: "Usa la skill: {0}"
-    tip: Hai menzionato "{0}" — clicca per iniziare con quella skill
   snippets:
     codeReview:
       description: Analizza la modifica corrente alla ricerca di regressioni, casi limite tralasciati e test mancanti.
@@ -2861,7 +2829,6 @@ promptNotices:
     unknownPath: (percorso sconosciuto)
   legacySendUnconfirmed: Questo server non ha potuto confermare l’invio precedente di questo messaggio, quindi potrebbe essere già stato elaborato. Controlla la conversazione prima di inviarlo di nuovo.
   mcpReloadDeferred: "Questa chat è occupata: la modifica MCP si applica quando il turno in corso termina e MCP si ricarica, o alla riapertura della chat"
-  mcpReloadNotInChat: "{0} non è attivato in questa chat"
   mcpReloadUnavailable: "Connessione non riuscita: {0}"
   sessionCommands:
     busy: sessione occupata — Hermes sta ancora rispondendo. Ferma prima la risposta corrente (pulsante Stop, o Ctrl+C in un terminale), poi esegui /{0}.
