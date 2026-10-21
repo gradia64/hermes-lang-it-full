@@ -232,6 +232,12 @@ assistant:
       SESSION_NOT_OWNED:
         body: Questa chat è aperta in un’altra finestra di Hermes o in un terminale. Chiudila lì e reinvia il messaggio, oppure inizia una nuova chat qui.
         title: Questa chat è aperta altrove
+      SESSION_OWNER_BUSY:
+        body: Un altro turno è in esecuzione qui e il tuo messaggio non è potuto entrare nella sua coda. Non è stato inviato nulla. Riprova quando quel turno termina.
+        title: Hermes è occupato in questa chat
+      SESSION_OWNER_UNCONFIRMED:
+        body: Il gateway non ha confermato il tuo messaggio in tempo. Se era in coda, viene eseguito quando il turno precedente termina o viene risolto. Controlla la chat prima di inviarlo di nuovo.
+        title: Il tuo messaggio potrebbe essere già in coda
       auth:
         body: Le credenziali salvate per {0} non sono state accettate. Correggile in Impostazioni o cambia provider e reinvia il messaggio.
         title: "{0} ha rifiutato il tuo accesso"
@@ -247,6 +253,9 @@ assistant:
       context_overflow:
         body: La conversazione non entra più nel modello. Comprimila o inizia una nuova chat e reinvia il messaggio.
         title: Questa conversazione è troppo lunga
+      cron_session_read_only:
+        body: Esegue solo quell’attività, quindi il tuo messaggio non è stato eseguito. Avvia una nuova chat per inviarlo.
+        title: Questa chat appartiene a un’attività pianificata
       disk_full:
         body: Il tuo disco è pieno, quindi Hermes non è riuscito a salvare questa conversazione. Libera spazio e riprova.
         title: Disco pieno
@@ -652,6 +661,113 @@ butterbar:
     between: " e "
     privacy: Informativa sulla privacy
     terms: Termini di servizio
+catalog:
+  about: Informazioni
+  add: Aggiungi
+  added: Aggiunto
+  addedDate: Aggiunto il
+  allCategories: Tutte le categorie
+  allSources: Tutte le fonti
+  alphabetical: Nome
+  author: Autore
+  back: Torna ai risultati
+  cardView: Vista schede
+  category: Categoria
+  clearFilters: Cancella i filtri
+  commands: Comandi
+  destinationChanged: La destinazione è cambiata. Chiudi questa finestra e apri di nuovo il link di installazione.
+  developer:
+    docs: Documentazione per sviluppatori
+    heading: Modalità sviluppatore
+    pitch: Hai costruito uno strumento, un connettore, un plugin o una Mod?
+    pitchFollowUp: Vuoi farlo ma non sai come?
+    submit: Invia una Mod
+    title: Crea per Hermes
+  discover: Scopri
+  discoverKind: Scopri {0}
+  documentation: Documentazione
+  explorePlugins: Esplora i plugin
+  exploreSkills: Esplora le skill
+  featured: In evidenza
+  filters: Filtri
+  hooks: Hook
+  installComplete: “{0}” installato
+  installDescription: Questa skill sarà disponibile nelle nuove sessioni. Installa solo da fonti affidabili.
+  installHint: Controlla il sorgente prima di installare. Le modifiche si applicano alle nuove sessioni.
+  installTitle: Installare “{0}”?
+  installTo: Installa in
+  installed: Installato
+  installing: Installazione…
+  license: Licenza
+  listView: Vista elenco
+  loadFailed: Impossibile caricare il catalogo
+  middleware: Middleware
+  more: Mostra di più
+  moreToExplore: Altro da esplorare
+  moreToExploreBlurb: Gli angoli più piccoli del catalogo, tutti in un solo posto.
+  mostStarred: Più stellati
+  newest: Più recenti
+  nextSlide: Successivo in evidenza
+  noResults: Nessuna corrispondenza
+  pinned: Commit verificato
+  platforms: Piattaforme
+  previousSlide: Precedente in evidenza
+  recentlyUpdated: Aggiornati di recente
+  related: Simili a questo
+  repository: Repository
+  requires: Richiede
+  results: "{0} risultati"
+  retry: Riprova
+  screenshots: Screenshot
+  searchPlugins: Cerca plugin
+  searchSkills: Cerca skill
+  seeAll: Vedi tutti
+  skillsFor: Skill per {0}.
+  slideOf: "{0} di {1}"
+  snapshotHint: Dal catalogo di Hermes. Esplorare non contatta mai i repository sorgente.
+  sortBy: Ordina per
+  source: Fonte
+  tags: Tag
+  thisComputer: Questo computer
+  tier: Livello
+  tierLabels:
+    community: Community
+    official: Ufficiale
+    verified: Verificato
+  tiers:
+    official:
+      blurb: Costruiti e mantenuti da Nous Research.
+      title: Plugin ufficiali
+    verified:
+      blurb: Dall’azienda che sta dietro all’integrazione, verificati da Nous.
+      title: Plugin verificati
+  tools: Strumenti
+  toolsets:
+    callCount: "{0} chiamate"
+    essentials: Essenziali
+    essentialsBlurb: Su cosa gira la maggior parte del lavoro con Hermes.
+    mostUsed: Più usati
+    mostUsedBlurb: I set di strumenti che Hermes usa di più su questo profilo.
+    themes:
+      connect:
+        blurb: Account, altri agenti, la casa intelligente e la ricerca oltre il web.
+        label: Connetti e raggiungi
+      create:
+        blurb: Guarda immagini e video, trascrivi la voce e genera contenuti.
+        label: Vedi, ascolta e crea
+      more:
+        blurb: Tutto il resto che questo profilo può attivare.
+        label: Altri strumenti
+      recall:
+        blurb: Ciò che Hermes ricorda e le skill e la cronologia che può cercare.
+        label: Memoria e conoscenza
+      work:
+        blurb: Guida browser e desktop, modifica file, esegui codice e pianifica lavori.
+        label: Sfoglia, lavora e automatizza
+    toolCount: "{0} strumenti"
+  tryAnother: Prova un’altra ricerca o cancella i filtri.
+  updatedDate: Aggiornato
+  version: Versione
 commandCenter:
   actionDone: completato
   actionFailed: non riuscito
@@ -1801,6 +1917,10 @@ freeTier:
   tryAgain: Riprova
   unreachableBody: Hermes non è riuscito a raggiungere il servizio di Nous per completare l’avvio della tua sessione. Controlla la tua connessione a internet e riprova. La tua sessione resta qui.
   waiting: In attesa dell’accesso…
+gatewayGroupOpen:
+  lookupFailed: Impossibile cercare questo gruppo sul gateway. Riprova.
+  missing: Questo gruppo del gateway non esiste più.
+  opening: Apertura del gruppo del gateway…
 install:
   activeDesc: Questa configurazione viene eseguita una sola volta. Il programma di installazione di Hermes sta scaricando le dipendenze e configurando la tua macchina. I successivi avvii salteranno questo passaggio.
   applyRemote: Applica e riconnetti
@@ -2699,11 +2819,53 @@ profiles:
   title: Profili
   unsavedChanges: Modifiche non salvate
 promptNotices:
+  compactedTurnUnavailable: Quel messaggio è stato riassunto durante la compressione della chat, quindi non può più essere ripristinato o modificato.
+  desktopCommands:
+    agentsEmpty: Nessun subagente attivo o processo in background in questa chat.
+    checkpointsDisabled: I checkpoint non sono attivati per questa sessione (imposta checkpoints.enabled in config.yaml).
+    checkpointsEmpty: Ancora nessun checkpoint per questa directory di lavoro.
+    checkpointsHeader: "Checkpoint (prima i più recenti):"
+    checkpointsHint: Ripristina con /rollback <n> [file] (aggiungi --all per sovrascrivere anche le tue modifiche); anteprima con /rollback diff <n>.
+    configDefaults: (predefiniti)
+    configFooter: Cambia le impostazioni in Impostazioni, oppure modifica config.yaml con `hermes config edit` sull’host del gateway.
+    configHeader: "Configurazione (visualizzazione, approvazioni, impostazioni incolla e voce; tutto il resto non è mostrato):"
+    error: "errore: {0}"
+    exportRemote: /export prepara un profilo dall’host del gateway, che non è questo computer. Esegui `hermes profile export` su quell’host.
+    historyEmpty: Ancora nessun messaggio.
+    historyHeader: "Cronologia della conversazione ({0} messaggi):"
+    historyHermes: Hermes
+    historyYou: Tu
+    importRemote: /import installa un profilo sull’host del gateway, che non è questo computer. Esegui `hermes profile import <archivio>` su quell’host.
+    noDiff: Nessuna modifica da quel checkpoint.
+    processesHeader: "Processi in background ({0}):"
+    reopenForRewind: Riapri questa chat per vedere la conversazione riavvolta.
+    restored: Checkpoint {0} ripristinato.
+    rewound: "{0} messaggi riavvolti da questa conversazione."
+    rollbackFailed: "Rollback non riuscito: {0}"
+    rollbackUsage: "uso: /rollback [list] | diff <n|hash> | <n|hash> [file] [--all]"
+    saveCancelled: Non salvato (annullato).
+    saveDialogTitle: Salva conversazione
+    saveLegacyRefused: "Non salvato: questo gateway non può esportare una copia oscurata, con nome o non JSON. Aggiorna il gateway, oppure esegui /save senza opzioni per scrivere il JSON grezzo sull’host del gateway."
+    saveUnsupported: "errore: questa build del desktop non può salvare file"
+    saveUsage: "uso: /save [json|md|html] [nomefile] [redact]"
+    savedOnHost: "Salvato sull’host del gateway: {0}"
+    savedTo: Conversazione salvata in {0}
+    statusRunning: in esecuzione
+    subagentFallback: subagente
+    subagentsHeader: "Subagenti ({0}):"
+    timestampsOff: "Timestamp: disattivati (questa finestra; imposta display.timestamps in config.yaml per mantenerlo)"
+    timestampsOn: "Timestamp: attivati (questa finestra; imposta display.timestamps in config.yaml per mantenerlo)"
+    timestampsUsage: "uso: /timestamps [on|off|status]"
+    toolCalls: "{0} chiamate a strumenti"
+    unknownError: errore sconosciuto
+    unknownPath: (percorso sconosciuto)
   legacySendUnconfirmed: Questo server non ha potuto confermare l’invio precedente di questo messaggio, quindi potrebbe essere già stato elaborato. Controlla la conversazione prima di inviarlo di nuovo.
   mcpReloadDeferred: "Questa chat è occupata: la modifica MCP si applica quando il turno in corso termina e MCP si ricarica, o alla riapertura della chat"
   mcpReloadNotInChat: "{0} non è attivato in questa chat"
   mcpReloadUnavailable: "Connessione non riuscita: {0}"
   sessionCommands:
+    busy: sessione occupata — Hermes sta ancora rispondendo. Ferma prima la risposta corrente (pulsante Stop, o Ctrl+C in un terminale), poi esegui /{0}.
+    busyCompressing: sessione occupata — è in corso un /compress; esegui /{0} al termine.
     countOne: "{0} messaggio in coda"
     countOther: "{0} messaggi in coda"
     queueEditKept: È partito o è stato rifiutato prima che la tua modifica fosse salvata. Il testo modificato è nel compositore.
@@ -2722,6 +2884,7 @@ promptNotices:
     undidOther: annullati {0} messaggi — il messaggio rimosso è nel compositore
     undoNothing: niente da annullare
     undoUsage: "uso: /undo [N]"
+  staleTurnUnavailable: Quel messaggio non è più nella cronologia di questa chat.
 prompts:
   gatewayDisconnected: Hermes non è connesso in questo momento. Riconnettiti e invialo di nuovo.
   reconnect: Riconnetti
@@ -3991,6 +4154,20 @@ settings:
     staleAuxBefore: "{0} attività ausiliarie ({1}) sono ancora in esecuzione su "
     staleAuxDismiss: Non mostrare più
     staleAuxOtherProviders: altri provider
+    subagents:
+      catalogFailed: Catalogo modelli non disponibile. Inserisci manualmente un provider e un modello, oppure riprova.
+      customProvider: Provider personalizzato…
+      customProviderLabel: Provider subagente personalizzato
+      direct: Override endpoint diretto
+      directActive: Un endpoint diretto è attivo e ha la precedenza sul provider salvato. Il suo endpoint e le sue credenziali vengono conservati finché resta selezionata questa modalità.
+      directClear: Applicare questa route azzera l’endpoint diretto e la sua chiave salvata. Le altre impostazioni delle richieste restano.
+      draftHint: Le modifiche restano locali finché non vengono applicate.
+      inherit: Eredita dall’agente principale
+      modelLabel: Modello subagente
+      modelOnly: Modello personalizzato (usa le credenziali del genitore)
+      parentModel: Usa il modello del genitore
+      parentModelWarning: Il provider scelto deve supportare il modello del genitore. Una route solo-provider può fallire se il modello è incompatibile. Se quel provider imposta un proprio modello predefinito, i subagenti usano quello.
+      providerLabel: Provider subagente
     tasks:
       approval:
         hint: Approvazione automatica intelligente
@@ -4091,6 +4268,8 @@ settings:
     missing: Questo plugin non ha una pagina di impostazioni. Potrebbe essere disattivato o disinstallato.
     pageCount: "{0} pagine"
   plugins:
+    disable: Disattiva
+    enable: Attiva
     failed: fallito
     installModal:
       advanced: Avanzate
@@ -4517,8 +4696,6 @@ settings:
     title: Password e accessi
     twoFactorBadge: 2FA automatica
 sharedMetrics:
-  collectDesc: Contatori limitati salvati su questo dispositivo. Mai prompt, file, percorsi né testi di errore.
-  collectLabel: Raccogli statistiche di utilizzo
   collectedActivity: Attività, durata delle sessioni, risultati e classi di errore
   collectedMachine: "Dati generali del computer: intervallo di RAM, tipo di GPU, età e canale della versione di Hermes, aggiornamenti in sospeso, se si usa un server di modelli locale"
   collectedMilestones: Conteggi di configurazione raggruppati
@@ -4529,7 +4706,6 @@ sharedMetrics:
   consentBody: Le metriche condivise contengono solo contatori limitati. Mai prompt, file, percorsi né testi di errore. La raccolta è locale. Inviarle a Nous è un consenso separato.
   consentTitle: Ci aiuti a migliorare Hermes?
   dialogTitle: Statistiche di utilizzo
-  local: Raccogli solo in locale
   "off": No, grazie
   readDocs: Leggi tutti i dettagli
   saveFailed: Impossibile salvare la tua scelta
@@ -4539,7 +4715,6 @@ sharedMetrics:
   share: Raccogli e invia a Nous
   stripBody: Solo contatori limitati, mai prompt né file.
   stripChoices:
-    local: Solo locale
     "off": No, grazie
     share: Invia a Nous
   stripDetails: Dettagli
@@ -5035,11 +5210,7 @@ skills:
     agentBlurb: "Ampliano l’agente del profilo selezionato: strumenti, hook, provider. Si applicano dopo il riavvio del gateway."
     agentTitle: Plugin dell’agente
     alreadyInstalled: "{0} è già installato in questo profilo."
-    catalogBrowse: Esplora
-    catalogHide: Nascondi l’esploratore del catalogo
-    catalogHint: "Premi \"+ Aggiungi a questo agente\" su qualsiasi plugin: le voci verificate vengono installate al loro commit fissato nel profilo selezionato. I plugin agente+desktop inclusi offrono entrambe le metà."
     catalogProvenance: Installato dal catalogo di Hermes al commit fissato {0}.
-    catalogTitle: Catalogo dei plugin
     deepLinkCatalogInvalidName: Nome del catalogo nel link mancante o non valido.
     deepLinkCatalogUnavailable: Impossibile caricare il catalogo dei plugin di Hermes. Controlla la tua connessione e riapri il link.
     deepLinkCatalogUnknown: “{0}” non è nel catalogo dei plugin di Hermes. Non è stato installato nulla.
@@ -5079,6 +5250,7 @@ skills:
       unsupported_gpu: GPU non compatibile
       version_too_old: versione troppo vecchia
     settingsForm:
+      optional: (opzionale)
       required: Obbligatorio
       save: Salva configurazione
       saveFailed: Impossibile salvare la configurazione di {0}
@@ -5103,8 +5275,14 @@ skills:
     updateConsentConfirm: Applica aggiornamento
     updateConsentTitle: "{0} chiede di più"
     updateFailed: Impossibile aggiornare {0}
+    updateScanBlocked: La scansione di sicurezza ha bloccato l’aggiornamento di {0} (verdetto dangerous). Non può essere scavalcato.
+    updateScanBody: "L’aggiornamento di {0} ha ricevuto un verdetto caution ({1} riscontri). Ogni aggiornamento viene scansionato. Applicalo solo se ti fidi della fonte:"
+    updateScanConfirm: Aggiorna comunque
+    updateScanMore: + altri {0}
+    updateScanTitle: La scansione di sicurezza ha segnalato {0}
     updateToPin: Aggiorna a {0}
     updated: "{0} è stato aggiornato al commit fissato attuale del catalogo. Riavvia il gateway per applicarlo."
+    updatedGit: "{0} aggiornato all’ultimo commit."
   provenance:
     agent: Appreso
     bundled: Integrato
