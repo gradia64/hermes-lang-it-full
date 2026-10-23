@@ -221,6 +221,7 @@ assistant:
     copyFullResponse: Copia la risposta completa
     dismissError: Ignora errore
     editMessage: Modifica messaggio
+    errorAddCredits: Aggiungi crediti
     errorAuthKinds:
       api_key:
         body: La chiave salvata per {0} non è valida o è stata revocata. Aggiornala e riprova.
@@ -331,6 +332,12 @@ assistant:
       upstream_rate_limit:
         body: "{0} sta limitando le richieste in questo momento. Attendi un minuto e riprova."
         title: Il servizio di IA è occupato
+      usage_window:
+        body: L’utilizzo incluso del tuo piano è esaurito fino al ripristino. Aggiungi crediti in /topup per continuare.
+        title: Utilizzo incluso esaurito
+      workspace_unavailable:
+        body: La cartella in cui lavora questa chat è stata spostata o eliminata, quindi il tuo messaggio non è stato eseguito. Ricrea la cartella, oppure usa «Sposta nel progetto» per assegnarne un’altra alla chat, poi riprova.
+        title: La cartella di questa chat non c’è più
     errorCompressConversation: Comprimi conversazione
     errorCompressFailed: Impossibile comprimere la conversazione
     errorCopyDiagnostics: Copia i dettagli dell’errore
@@ -358,6 +365,7 @@ assistant:
       streaming: La risposta è stata interrotta
     errorLimitResets: Il limite verrà ripristinato alle {0}
     errorOauthExpired: La tua sessione di {0} è scaduta o è stata revocata. Accedi di nuovo per continuare a chattare.
+    errorOpenBillingSettings: Apri le impostazioni di fatturazione
     errorOpenDesktopLogs: Apri i log di Desktop
     errorOpenHermesFolder: Apri la cartella di Hermes
     errorOpenHermesFolderFailed: Impossibile aprire la cartella di Hermes
@@ -371,9 +379,13 @@ assistant:
     errorSignInAgain: Accedi di nuovo a {0}
     errorSignInFreeTier: Accedi con un account Nous
     errorStartNewSession: Avvia una nuova sessione
+    errorSwitchModelFailed: Impossibile cambiare modello
     errorSwitchProvider: Cambia provider
+    errorSwitchToModel: Passa a {0} ({1})
     errorToastTitle: Hermes non è riuscito a completare la risposta
     errorUpdateApiKey: Aggiorna chiave API
+    errorUseCredits: Attiva Continua con i crediti
+    errorUseCreditsFailed: Impossibile attivare Continua con i crediti
     expandMessage: Espandi messaggio
     filesChanged: "{0} file modificati"
     goForward: Avanti
@@ -691,6 +703,7 @@ catalog:
   featured: In evidenza
   filters: Filtri
   hooks: Hook
+  install: Installa
   installComplete: “{0}” installato
   installDescription: Questa skill sarà disponibile nelle nuove sessioni. Installa solo da fonti affidabili.
   installHint: Controlla il sorgente prima di installare. Le modifiche si applicano alle nuove sessioni.
@@ -1214,6 +1227,9 @@ composer:
   wakeWordOff: "Parola di attivazione: \"{0}\" — disattivata"
   wakeWordPausedVoice: "Parola di attivazione: \"{0}\" — in pausa durante la chat vocale"
   wakingProfile: Risveglio di {0}…
+connectorOffer:
+  body: Accedi con un account Nous gratuito per mantenere su tuo account le app che hai collegato, come Gmail o Slack.
+  heading: Mantieni le app connesse
 connectors:
   authorizedToolsUnavailable: Autorizzato. Strumenti non disponibili.
   cancel: Smetti di attendere
@@ -1831,15 +1847,14 @@ freeTier:
   busyBody: Hermes non è riuscito a completare l’avvio della tua sessione perché il servizio di Nous è occupato. Riprova tra {0}. Nel frattempo, la tua sessione resta qui.
   busyHeading: Ci siamo quasi
   change: Cambia
-  codeBody: Inserisci questo codice nel tuo browser per completare l’accesso.
   completedBody: Il tuo account include già inferenza e strumenti.
-  copyLink: Copia link
   defaultModel: Modello predefinito
   didNotComplete: L’accesso non è stato completato
   dismiss: Ignora
   doNotShare: Non condividere questo codice.
   done: Fatto
   errorBody: L’accesso non è stato completato. Riprova quando vuoi.
+  finishInBrowser: Completa nel browser
   finishingBody: Approvato nel browser. Recupero dei token del tuo account.
   finishingHeading: Completamento dell’accesso…
   notNow: Non ora
@@ -1848,15 +1863,16 @@ freeTier:
     heading: Continua con Hermes
     notNow: Non ora
     signIn: Accedi
+  openConnectors: Apri Connettori
   openModelPicker: Apri selettore modelli
+  openPageAgain: Apri di nuovo la pagina
   otherProviders: Altri provider
   providerName: Nous
   providerRowPitch: Accedi con un account Nous per sbloccare più modelli e strumenti.
   providerRowTitle: Nous · piano gratuito
   readyCaption: Gratis · connettori inclusi
   readyTitle: Hermes è pronto.
-  rejectedBody: Nessun problema, resti nel servizio gratuito di Nous. Accedi quando vuoi.
-  retiredBody: La tua sessione è terminata prima di completare l’accesso. Hermes ne avvierà una nuova; poi accedi di nuovo quando vuoi.
+  reconnect: Riconnetti
   settingUp: Configurazione dell’inferenza gratuita…
   setupFailed:
     gateClosed: "Questa versione di Hermes non può avviarsi senza un account Nous. Accedi o creane uno: è gratis e richiede solo un minuto."
@@ -1874,12 +1890,10 @@ freeTier:
   signInHeading: Accedi con un account Nous per sbloccare più modelli e strumenti.
   signInInstead: Accedi con un account Nous
   signedIn: Sessione avviata.
-  signedInAs: Sessione avviata come {0}
-  startAgain: Ricomincia
+  signedInAsLabel: Accesso effettuato come
   statusLabel: Nous · {0}
   stripBody: Apri il selettore dei modelli per provarli oppure accedi con un account Nous.
   stripTitle: L’inferenza e i connettori gratuiti di Nous sono ora disponibili.
-  supersededBody: Un codice di accesso più recente ha sostituito questo. Usa quello più recente o ricomincia.
   timedOutBody: Ricomincia quando vuoi. Resti nel servizio gratuito di Nous.
   timedOutHeading: Quel link di accesso è scaduto
   tryAgain: Riprova
@@ -2336,18 +2350,44 @@ modelPicker:
   downloading: Download in corso
   free: Gratis
   freeTier: Piano gratuito
+  included: Tutti i modelli qui sotto sono inclusi
+  includedUsedUp: Utilizzo incluso esaurito
+  largeFootnote: I modelli Large usano anche il tuo limite mensile dei modelli Large.
+  limitNames:
+    day: giornaliero
+    month: mensile
+    top_tier: mensile dei modelli Large
+    week: settimanale
+  limitReached: Limite {0} raggiunto
+  limitThenCredits: i modelli a pagamento ora usano i tuoi crediti (a consumo)
+  limitThenCreditsLarge: I modelli Large ora usano i tuoi crediti (a consumo)
+  limitThenWait: solo modelli Free fino ad allora
+  limitThenWaitLarge: Modelli Large in pausa fino ad allora
   loadFailed: Impossibile caricare i modelli
   loadingIntoMemory: Caricamento in memoria
   localDownloadsHeading: Locali
+  month: Mese
   noAuthenticatedProviders: Nessun provider autenticato.
   noModels: Nessun modello trovato.
+  pausedOther: in pausa
+  pausedRenewal: "in pausa: rinnovo non pagato"
+  percentUsed: "{0} utilizzato"
   priceTitle: Prezzo in ingresso / in uscita per milione di token
   pro: Pro
   proNeedsSubscription: I modelli Pro richiedono un abbonamento a pagamento a Nous.
+  resetsIn: si azzera tra {0}
   search: Filtra provider e modelli...
+  sectionOther: Altri modelli
+  sectionRecommended: Consigliati
   title: Cambia modello
+  today: Oggi
+  topTier: Modelli Large (mensili)
   unknown: (sconosciuto)
+  usageLevels:
+    free: Gratis
+    top_tier: Large
   wasPrice: prima
+  week: Settimana
 modelVisibility:
   addCustomModel: Aggiungi modello personalizzato
   addProvider: Aggiungi provider…
@@ -2993,6 +3033,7 @@ settings:
       description: Le installazioni stabili ricevono solo release pubblicate. Con l’opzione «ogni commit» segui il branch main man mano che le modifiche arrivano.
       detailsLabel: Canale
       failed: Impossibile cambiare il canale di aggiornamento
+      heldBody: Questa build è più recente della release stabile {0}. Le tue sessioni usano già un runtime del gateway che {0} non può aprire, quindi Hermes resta su questa build finché non esce una release stabile più recente.
       latestRelease: Sei sull’ultima release stabile ({0}).
       main: Ogni commit
       rollbackAction: Torna a {0}
@@ -3261,6 +3302,14 @@ settings:
       plan: Piano gratuito
       signIn: Accedi
       title: Sei nel piano gratuito di Nous
+    keepGoingOnCredits:
+      approveInBrowser: Per cambiare questa opzione, approva la Spesa remota nel browser. Si applica appena approvi.
+      approvedRetry: La Spesa remota è approvata, ma la modifica non è stata salvata.
+      cancel: Annulla
+      description: "Usa i tuoi crediti quando finisce l’utilizzo incluso. Disattivato: Hermes attende il ripristino."
+      openAgain: Apri di nuovo
+      title: Continua con i crediti
+      tryAgain: Riprova
     perMonth: "{0}/mese"
     plan:
       alreadyOn: Hai già il piano {0}; non c’è nulla da cambiare.
@@ -3348,6 +3397,19 @@ settings:
         topupCredits:
           caption: Non scadono
           title: Crediti di ricarica
+        window:
+          barLabel: "{0}: utilizzo incluso usato"
+          captionIncluded: Utilizzo incluso
+          captionPaused: "In pausa: pagamento dell’abbonamento non riuscito"
+          captionPausedOther: "In pausa: vedi Fatturazione nel portale"
+          captionResetsIn: Si azzera tra {0}
+          captionTopTierUsedUp: Franchigia mensile esaurita, i crediti coprono il resto
+          captionTopTierUsedUpKeepGoingOff: Franchigia mensile esaurita, gli altri modelli inclusi continuano a funzionare
+          month: Questo mese
+          today: Oggi
+          topTier: Modelli Large (mensili)
+          valueUsed: "{0} utilizzato"
+          week: Questa settimana
     stepUp:
       deniedBody: La verifica è terminata senza consentire la spesa remota per questo terminale.
       deniedTitle: La verifica non è stata approvata
@@ -4135,6 +4197,92 @@ settings:
       parentModel: Usa il modello del genitore
       parentModelWarning: Il provider scelto deve supportare il modello del genitore. Una route solo-provider può fallire se il modello è incompatibile. Se quel provider imposta un proprio modello predefinito, i subagenti usano quello.
       providerLabel: Provider subagente
+      routing:
+        addRoute: Aggiungi route
+        baseUrlRoute: endpoint {0}
+        blockedDetail: Questa modalità è salvata, quindi Hermes rifiuta ogni subagente invece di usare in silenzio Predefinito.
+        blockedDisabled: I subagenti non si avvieranno finché Advanced Delegation non viene attivato per questo profilo.
+        blockedMissing: I subagenti non si avvieranno finché Advanced Delegation non viene installato.
+        blockedNotLoaded: I subagenti non si avvieranno finché Hermes non carica Advanced Delegation. Riavvia Hermes per completare.
+        blockedPill: Non in esecuzione
+        blockedUnavailable: I subagenti non si avvieranno finché {0} non potrà girare qui. Il suo plugin segnala che non può.
+        blockedUnregistered: I subagenti non si avvieranno finché non viene installato e attivato un plugin che fornisce “{0}”.
+        createRoute: Aggiungi route
+        defaultBadge: Predefinita
+        deleteConfirmAction: Elimina route
+        deleteConfirmBody: I subagenti non potranno più sceglierla.
+        deleteConfirmNextDefault: È la route predefinita, quindi “{0}” diventa la predefinita.
+        deleteConfirmTitle: Eliminare la route “{0}”?
+        deleteRoute: Elimina
+        descriptionHint: Una riga che l’agente legge prima di scegliere.
+        descriptionLabel: Quando usarla
+        descriptionPlaceholder: "es. Economico e rapido: ricerche, riassunti, modifiche semplici."
+        dialogDesc: L’agente legge nome e descrizione per decidere quale route prende un subagente.
+        dialogEdit: Modifica route di modelli
+        dialogNew: Nuova route di modelli
+        editRoute: Modifica
+        effortInherit: Predefinito del subagente
+        effortLabel: Sforzo di ragionamento
+        enableFailed: Impossibile attivare Advanced Delegation
+        enablePlugin: Attiva
+        errors:
+          duplicate: Un’altra route usa già questo nome
+          required: Obbligatorio
+          spaces: Niente spazi
+        inUse: In uso
+        inactiveModelMap: Le route di modelli scelgono il modello di ogni subagente. I subagenti che non scelgono una route usano “{0}”.
+        inactiveModelMapNoDefault: Le route di modelli scelgono il modello di ogni subagente. I subagenti che non scelgono una route usano il modello dell’agente principale.
+        inactivePlugin: "{0} decide il modello di ogni subagente, quindi questa impostazione non si applica."
+        inactiveProfiles: Le route di profili scelgono il profilo di ogni subagente. I subagenti che non scelgono un profilo girano come “{0}”.
+        inactiveProfilesNoDefault: Le route di profili scelgono il profilo di ogni subagente. I subagenti che non scelgono un profilo usano il modello dell’agente principale.
+        inactiveTitle: Non usato in questa modalità
+        installPlugin: Installa plugin
+        installUnavailable: Advanced Delegation non è ancora nel catalogo dei plugin. Installalo da Capacità → Plugin.
+        intro: Come ogni subagente ottiene il proprio modello.
+        loadFailed: Impossibile caricare il routing dei subagenti
+        makeDefault: Rendi predefinita
+        modeFailed: Impossibile cambiare il routing dei subagenti
+        modelLabel: Modello
+        modelRoutesEmpty: Ancora nessuna route. Finché non ne aggiungi una, i subagenti usano il modello dell’agente principale.
+        modelRoutesTitle: Route di modelli
+        modes:
+          default:
+            description: Ogni subagente usa il modello subagente qui sotto.
+            label: Predefinito
+          model_map:
+            description: Nomina alcuni modelli. L’agente ne sceglie uno per ogni subagente.
+            label: Route di modelli
+          profile_routes:
+            description: I subagenti girano come uno dei tuoi profili, con il suo modello, le sue skill e le sue chiavi.
+            label: Route di profili
+        nameHint: Breve, senza spazi. L’agente sceglie le route da questo nome.
+        nameLabel: Nome
+        namePlaceholder: es. veloce
+        optional: opzionale
+        plugin: Plugin
+        pluginDisabled: Advanced Delegation è installato ma disattivato per questo profilo.
+        pluginMissing: Le route di modelli e le route di profili arrivano dal plugin Advanced Delegation.
+        pluginNotLoaded: Advanced Delegation è attivo, ma Hermes non lo ha ancora caricato. Riavvia Hermes per completare.
+        profileDefault: Predefinito
+        profileDescriptionPlaceholder: Quando usarlo (opzionale)
+        profileEmpty: Ancora nessun altro profilo. Creane uno dalla barra dei profili.
+        profileMissing: "{0} (il profilo non esiste più)"
+        profileRoutesHint: Ogni profilo spuntato porta con sé il proprio modello, skill, personaggio e chiavi.
+        profileRoutesTitle: Profili in cui i subagenti possono girare
+        providerLabel: Provider
+        providerPlaceholder: Scegli un provider
+        routeActions: Azioni per {0}
+        saveFailed: Impossibile salvare le route
+        saveRoute: Salva route
+        settingsTitle: Predefiniti dei subagenti
+        thirdPartyDescription: Da un plugin. Le sue impostazioni stanno con quel plugin.
+        tierFast: Veloce
+        tierHint: Solo sui modelli che la offrono.
+        tierLabel: Velocità
+        tierNormal: Normale
+        tierUltrafast: Ultrarapida
+        title: Routing
+        useDefault: Passa a Predefinito
     tasks:
       approval:
         hint: Approvazione automatica intelligente
@@ -4221,6 +4369,8 @@ settings:
       turnError:
         description: Errori di turni in secondo piano.
         label: Il turno non è riuscito
+    muteSoundsDesc: Silenzia i segnali automatici di completamento, parola di attivazione e ragionamento, il feedback aptico e i suoni delle notifiche di sistema. Le anteprime dei suoni e le risposte parlate continuano a essere riprodotte.
+    muteSoundsTitle: Silenzia i suoni dell’interfaccia
     test: Invia notifica di test
     testBody: Le notifiche funzionano.
     testSent: Test inviato. Se non compare nulla, controlla i permessi di notifica del sistema operativo e la modalità Concentrazione o Non disturbare.
@@ -4829,6 +4979,7 @@ shell:
     openModelPicker: Apri selettore modello
     openStarmap: Apri grafo della memoria
     openWebhooks: Apri webhooks
+    planUsageTitle: "{0} di utilizzo del piano usati · si azzera tra {1} · apri Fatturazione"
     providerModelTitle: "{0} · {1}"
     releaseAvailable: La versione {0} è disponibile.
     resetStatusbar: Ripristina i valori predefiniti
@@ -4852,6 +5003,7 @@ shell:
     toggleCommandCenter: Centro comandi
     toggleContextUsage: Misuratore di contesto
     toggleFreeTier: Piano gratuito
+    togglePlanUsage: Utilizzo del piano
     toggleRunningTimer: Timer di turno
     toggleSessionTimer: Timer di sessione
     toggleTerminal: Terminale
