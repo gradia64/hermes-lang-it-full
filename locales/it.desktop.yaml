@@ -224,11 +224,12 @@ assistant:
     errorAddCredits: Aggiungi crediti
     errorAuthKinds:
       api_key:
-        body: La chiave salvata per {0} non è valida o è stata revocata. Aggiornala e riprova.
+        body: La chiave salvata non è valida o è stata revocata. Aggiornala, poi reinvia il messaggio.
         title: "{0} ha rifiutato la tua chiave API"
       oauth:
         title: La tua sessione di {0} è scaduta
     errorChooseModel: Scegli un modello
+    errorChooseModelLink: Scegli un altro modello
     errorCodes:
       SESSION_NOT_OWNED:
         body: Questa chat è aperta in un’altra finestra di Hermes o in un terminale. Chiudila lì e reinvia il messaggio, oppure inizia una nuova chat qui.
@@ -239,99 +240,112 @@ assistant:
       SESSION_OWNER_UNCONFIRMED:
         body: Il gateway non ha confermato il tuo messaggio in tempo. Se era in coda, viene eseguito quando il turno precedente termina o viene risolto. Controlla la chat prima di inviarlo di nuovo.
         title: Il tuo messaggio potrebbe essere già in coda
+      agent_init_failed:
+        body: Hermes non è riuscito a connettersi a {0} per questa chat. Riprova; se continua a succedere, controlla il provider in Impostazioni.
+        title: Impossibile avviare questa chat
       auth:
-        body: Le credenziali salvate per {0} non sono state accettate. Correggile in Impostazioni o cambia provider e reinvia il messaggio.
-        title: "{0} ha rifiutato il tuo accesso"
+        body: Le credenziali salvate non sono valide o sono state revocate. Aggiornale, poi reinvia il messaggio.
+        title: "{0} ha rifiutato la tua chiave API"
       auth_permanent:
-        body: Le credenziali salvate per {0} non sono valide o sono state revocate. Aggiornale o cambia provider e reinvia il messaggio.
-        title: "{0} ha rifiutato il tuo accesso"
+        body: Le credenziali salvate non sono valide o sono state revocate. Aggiornale, poi reinvia il messaggio.
+        title: "{0} ha rifiutato la tua chiave API"
       billing:
-        body: Il tuo account {0} non ha crediti. Ricarica o cambia provider e reinvialo.
-        title: Crediti esauriti
+        body: Aggiungi crediti per continuare a usare i modelli a pagamento su {0}.
+        title: "{0} è senza crediti"
       content_policy_blocked:
-        body: "{0} non risponderebbe a questo messaggio. Modificalo e reinvialo."
-        title: Il servizio di IA ha rifiutato questa richiesta
+        body: Il filtro di sicurezza di {0} l’ha respinto. Modifica il messaggio e reinvialo.
+        title: "{0} ha rifiutato questo messaggio"
       context_overflow:
-        body: La conversazione non entra più nel modello. Comprimila o inizia una nuova chat e reinvia il messaggio.
-        title: Questa conversazione è troppo lunga
+        body: La conversazione non entra più nella finestra di contesto di {1}. Comprimila per continuare.
+        title: Questa chat è troppo lunga
       cron_session_read_only:
         body: Esegue solo quell’attività, quindi il tuo messaggio non è stato eseguito. Avvia una nuova chat per inviarlo.
         title: Questa chat appartiene a un’attività pianificata
       disk_full:
-        body: Il tuo disco è pieno, quindi Hermes non è riuscito a salvare questa conversazione. Libera spazio e riprova.
+        body: Hermes non è riuscito a salvare questa conversazione. Libera spazio e riprova.
         title: Disco pieno
       empty_response:
-        body: "{0} non ha restituito nulla per questo messaggio. Riprova tra poco."
-        title: Il servizio di IA ha inviato una risposta vuota
+        body: "{0} non ha restituito nulla per questo messaggio. Riprova tra un momento."
+        title: Impossibile ottenere una risposta
       format_error:
-        body: "{0} non ha accettato il modo in cui questa richiesta è stata costruita. Cambia provider o invia una diagnostica per farla esaminare."
-        title: Il servizio di IA ha rifiutato la richiesta
+        body: "{0} non ha accettato la struttura di questa conversazione. Cambia provider, oppure apri una nuova chat se continua a succedere."
+        title: "{0} ha rifiutato questa richiesta"
       free_tier_at_capacity:
         body: Accedi per saltare la coda (è gratis) o riprova tra un po’.
-        title: Chattare senza accesso è molto richiesto in questo momento
+        title: Il piano gratuito è occupato
       free_tier_disabled:
         body: Accedi con un account Nous per continuare a chattare; è gratis.
-        title: L’uso di Hermes senza accesso è attualmente disattivato
+        title: Accedi per continuare a chattare
       free_tier_model_not_free:
         body: Per ora Hermes usa il modello gratuito. Accedi con un account Nous per avere più modelli; è gratis.
-        title: Quel modello non è disponibile senza accesso
+        title: Questo modello richiede l’accesso
       free_tier_outage:
         body: Reinvia il messaggio tra un minuto.
-        title: Il modello gratuito ha problemi a rispondere in questo momento
+        title: Il modello gratuito ha problemi
       free_tier_rate_limited:
-        body: Si rinnova a breve. Accedi con un account Nous per avere una quota maggiore; è gratis.
-        title: Hai esaurito la quota per chattare senza accesso
+        body: Si rinnova a breve. Accedi con un account Nous per una franchigia maggiore; è gratis.
+        title: Hai esaurito la franchigia gratuita
       free_tier_refused:
         body: Accedere con un account Nous è gratis.
-        title: Hermes non è riuscito a inviarlo senza accesso
+        title: Accedi per continuare a chattare
       free_tier_route:
         body: Accedi con un account Nous (è gratis) o controlla l’impostazione NOUS_INFERENCE_BASE_URL.
-        title: Hermes non è riuscito a raggiungere il modello gratuito tramite questa route
+        title: Impossibile raggiungere il modello gratuito
       invalid_response:
-        body: "{0} ha restituito qualcosa che Hermes non è riuscito a leggere. Riprova tra poco."
-        title: Il servizio di IA ha inviato una risposta illeggibile
+        body: "{0} ha restituito una risposta vuota o corrotta. Riprova tra un momento."
+        title: Impossibile leggere la risposta
+      launch_credentials_unavailable:
+        body: Questa chat è stata avviata con una chiave API che nel frattempo è cambiata o stata rimossa, quindi il tuo messaggio non è stato inviato. Una chat aperta non passa mai da sola a una chiave diversa. Avvia una nuova sessione per usare la chiave attuale.
+        title: La chiave API di questa chat è cambiata
+      local_runtime_unavailable:
+        body: "Il server del modello locale non risponde ancora: potrebbe essere in avvio. Riprova tra un momento, oppure passa a un altro modello."
+        bodyNoRetry: Il server del modello locale è spento. Avvialo dall’app desktop di Hermes o con `hermes model` in un terminale, oppure passa a un altro modello.
+        title: Impossibile raggiungere il server del modello locale
       loop_error:
-        body: La risposta ripeteva gli stessi passaggi, quindi Hermes l’ha interrotta. Riprova o inizia una nuova chat se si ripete.
-        title: Hermes è rimasto bloccato in un ciclo
+        body: Qualcosa è andato storto nell’elaborazione della risposta. Riprova; se si ripete, invia una diagnostica dai dettagli.
+        title: Hermes non è riuscito a completare questo passaggio
       model_not_found:
-        body: "{0} non offre questo modello sul tuo account. Scegli un altro modello e reinvia il messaggio."
-        title: Questo modello non è disponibile
+        body: "{0} non offre {1} sul tuo account. Scegli un altro modello."
+        title: "{1} non è disponibile"
       no_reply:
-        body: Hermes ha completato questo turno senza risposta. Riprova per inviarla di nuovo.
-        title: La risposta non è stata completata
+        body: Hermes ha completato questo turno, ma nessuna risposta è arrivata in questa finestra. Riprova per inviarla di nuovo.
+        title: La risposta non è arrivata
       overloaded:
-        body: "{0} ha problemi in questo momento. Riprova tra poco o cambia provider."
-        title: Il servizio di IA è sovraccarico
+        body: "{0} è sovraccarico e non ha potuto gestire questa richiesta. Riprova tra un momento."
+        title: "{0} è occupato in questo momento"
       payload_too_large:
-        body: La richiesta era troppo grande per il modello. Comprimi la conversazione o inizia una nuova chat e reinvia il messaggio.
+        body: La richiesta, allegati inclusi, supera il limite di dimensione di {0}. Comprimi la conversazione o rimuovi gli allegati.
         title: Questo messaggio è troppo grande
       provider_policy_blocked:
-        body: "{0} non instraderebbe questa richiesta con la configurazione di dati o privacy del tuo account. Scegli un altro modello o cambia provider."
-        title: La configurazione del tuo account blocca questo modello
+        body: Le impostazioni privacy di {0} escludono ogni endpoint per questo modello. Cambiale su {0}, oppure scegli un altro modello.
+        title: "{0}: le impostazioni bloccano {1}"
       rate_limit:
-        body: "{0} sta limitando le richieste in questo momento. Attendi un minuto e riprova."
-        title: Il servizio di IA è occupato
+        body: Hai raggiunto il limite di richieste di {0}. Attendi un momento e riprova.
+        title: "{0} è occupato in questo momento"
       server_error:
-        body: "{0} ha restituito un errore del server. Riprova tra poco o cambia provider."
-        title: Il servizio di IA ha riscontrato un problema
+        body: "{0} ha restituito un errore del server. Riprova tra un momento."
+        title: "{0} ha dei problemi"
+      session_read_only:
+        body: È una cronologia che Hermes può mostrare ma non continuare, quindi il tuo messaggio non è stato eseguito. Avvia una nuova chat per inviarlo.
+        title: Questa chat è in sola lettura
       ssl_cert_verification:
-        body: Hermes non è riuscito a verificare la connessione sicura con {0}. Controlla la configurazione di rete o del proxy, oppure cambia provider, e reinvia il messaggio.
-        title: Connessione sicura non riuscita
+        body: Un proxy o un archivio certificati non aggiornato ha bloccato la connessione sicura a {0}. La guida di configurazione mostra come risolverlo.
+        title: Impossibile verificare la connessione a {0}
       stream_drop:
         body: La connessione si è interrotta prima che la risposta fosse completata. Riprova per inviarla di nuovo.
         title: La risposta è stata interrotta
       timeout:
-        body: Impossibile connettersi a {0} oppure non ha risposto in tempo. Controlla la tua connessione a internet e riprova.
-        title: Impossibile connettersi al servizio di IA
+        body: Hermes non è riuscito a raggiungere {0}. Controlla la tua connessione e riprova.
+        title: Impossibile raggiungere {0}
       truncated:
-        body: Il modello si è fermato prima di terminare. Riprova per ottenere una risposta completa.
-        title: La risposta è rimasta incompleta
+        body: "{1} si è fermato prima di concludere la risposta. Prosegui per riprendere da dove si era fermato."
+        title: La risposta è stata troncata
       upstream_blocked:
-        body: Un firewall o una CDN davanti a {0} ha bloccato la richiesta prima che arrivasse al modello; probabilmente la tua chiave va bene. Definisci un header User-Agent tramite gli extra_headers del provider in Impostazioni oppure cambia provider e reinvia il messaggio.
-        title: Un firewall ha bloccato la richiesta
+        body: Un firewall davanti a {0} l’ha rifiutata prima che raggiungesse il modello. Cambia provider, oppure impostagli un User-Agent personalizzato.
+        title: "{0} ha bloccato questa richiesta"
       upstream_rate_limit:
-        body: "{0} sta limitando le richieste in questo momento. Attendi un minuto e riprova."
-        title: Il servizio di IA è occupato
+        body: "{1} è limitato a monte di {0}, non dal tuo account. Riprova tra un momento."
+        title: "{1} è occupato in questo momento"
       usage_window:
         body: L’utilizzo incluso del tuo piano è esaurito fino al ripristino. Aggiungi crediti in /topup per continuare.
         title: Utilizzo incluso esaurito
@@ -340,9 +354,12 @@ assistant:
         title: La cartella di questa chat non c’è più
     errorCompressConversation: Comprimi conversazione
     errorCompressFailed: Impossibile comprimere la conversazione
-    errorCopyDiagnostics: Copia i dettagli dell’errore
+    errorContinue: Continua
+    errorCopyRaw: Copia errore
     errorDetails: Dettagli
+    errorDetailsCopy: Copia dettagli
     errorGenericProvider: Il servizio di IA
+    errorHideDetails: Nascondi dettagli errore
     errorLayerBodies:
       auth: Il servizio di IA ha rifiutato il tuo accesso. Controlla le credenziali di questo provider e reinvia il messaggio.
       billing: Il tuo account non ha crediti per questo provider. Ricarica o cambia provider e reinvialo.
@@ -363,7 +380,6 @@ assistant:
       provider: Il servizio di IA ha restituito un errore
       runtime: Hermes ha avuto un problema
       streaming: La risposta è stata interrotta
-    errorLimitResets: Il limite verrà ripristinato alle {0}
     errorOauthExpired: La tua sessione di {0} è scaduta o è stata revocata. Accedi di nuovo per continuare a chattare.
     errorOpenBillingSettings: Apri le impostazioni di fatturazione
     errorOpenDesktopLogs: Apri i log di Desktop
@@ -371,13 +387,19 @@ assistant:
     errorOpenHermesFolderFailed: Impossibile aprire la cartella di Hermes
     errorOpenLogs: Apri i log
     errorOpenLogsFailed: Impossibile aprire la cartella dei log
+    errorOpenModelSettings: Apri impostazioni modello
+    errorOpenProviderSettings: Apri impostazioni {0}
+    errorOpenSetupGuide: Apri guida di configurazione
+    errorRateLimitResetBody: Hai raggiunto il limite di richieste di {0}. Si reimposta alle {1}.
     errorRetry: Riprova
-    errorRetryAtReset: Riprova quando il limite verrà ripristinato ({0})
+    errorRetryAtResetShort: Riprova alle {0}
     errorRetryScheduled: Nuovo tentativo alle {0}, tra {1}
     errorRetryScheduledCancel: Annulla
     errorSendDiagnostics: Invia diagnostica
+    errorSetupGuideLink: Guida di configurazione
     errorSignInAgain: Accedi di nuovo a {0}
     errorSignInFreeTier: Accedi con un account Nous
+    errorStartNewChatLink: Avvia una nuova chat
     errorStartNewSession: Avvia una nuova sessione
     errorSwitchModelFailed: Impossibile cambiare modello
     errorSwitchProvider: Cambia provider
@@ -638,6 +660,8 @@ boot:
     signedInTitle: Accesso effettuato
     title: Impossibile avviare Hermes
     useLocalGateway: Usa il gateway locale
+    webappDescription: Esegui hermes webapp su questo computer per autenticare questo browser.
+    webappTitle: Accedi a Hermes
   ready: Hermes Desktop è pronto
   steps:
     connectingGateway: Connessione al gateway desktop live
@@ -857,7 +881,6 @@ commandCenter:
     actionStarted: "{0} avviato; segui il log…"
     backup: Crea backup
     backupDesc: Comprimi configurazione, memorie, skills e sessioni in un file ZIP
-    builtinMemory: integrata
     bytes: "{0}"
     copyLink: Copia link
     curator: Curatore delle skills
@@ -877,9 +900,7 @@ commandCenter:
     empty: vuoto
     linkCopied: Link copiato
     memoryData: Dati di memoria
-    memoryDataDesc: File di memoria integrati inclusi in ogni sessione
     memoryFile: Memoria dell’agente (MEMORY.md)
-    memoryProvider: "Provider attivo: {0}"
     pause: Metti in pausa
     resetAll: Ripristina entrambi
     resetConfirm: Eliminare {0}? Questa azione non può essere annullata.
@@ -1557,6 +1578,20 @@ cron:
     subtitle: Automazioni pronte all’uso
     tab: Modelli
   close: Chiudi cron
+  control:
+    catchUpChoices:
+      default: Usa il predefinito
+      run: Esegui una volta al ritorno
+      skip: Ignorale
+    catchUpHint: Cosa fare con le esecuzioni saltate mentre Hermes non era in esecuzione.
+    catchUpLabel: Esecuzioni saltate
+    failedStop: Impossibile fermare l'esecuzione
+    finishedFirst: Esecuzione terminata prima di poterla fermare
+    lastCancelled: "Ultima esecuzione annullata: {0}"
+    nothingToStop: Nessuna esecuzione in corso
+    stop: Ferma
+    stopped: Esecuzione annullata
+    stopping: Arresto…
   count: "{0} attività"
   createAction: Crea cron
   createDesc: Pianifica un prompt da eseguire automaticamente. Usa la sintassi cron o una frase in inglese come "every 15m".
@@ -1676,6 +1711,7 @@ cron:
 desktop:
   archiveFailed: Impossibile archiviare
   archived: Archiviato
+  attachFailed: Collegamento fallito
   attachImages: Allega immagini
   audioReadFailed: Impossibile leggere l’audio registrato
   branchFailed: Impossibile creare il branch
@@ -1694,6 +1730,7 @@ desktop:
   downloadImage: Scarica immagine
   downloadStarted: Download avviato
   dropFiles: Rilascia i file
+  dropFilesMore: e altri {0}
   editFailed: Impossibile modificare
   editTurnUnavailable: Questo turno non è più nella cronologia del server (potrebbe essere stato compresso).
   emptySlashCommand: comando slash vuoto
@@ -1835,6 +1872,8 @@ firstRun:
   skipFailed: Impossibile saltare la configurazione
   skipTip: Chiude la configurazione guidata e apre una nuova chat.
   skippedAll: Configurazione saltata
+  slashOffBody: Funzionano come al solito una volta completata la configurazione.
+  slashOffTitle: I comandi slash sono disattivati durante la configurazione
   tours:
     full: Mostrami tutto
     quick: Tour rapido
@@ -2478,6 +2517,7 @@ notifications:
     microphoneConstraintsUnsupported: Questo dispositivo non supporta i vincoli del microfono.
     microphoneFailed: Errore del microfono
     microphoneInUse: Il microfono è già in uso da un’altra app.
+    microphoneNeedsHttps: Il microfono richiede una connessione sicura. Apri la Webapp via HTTPS, oppure tramite un tunnel SSH verso 127.0.0.1, per usarlo.
     microphonePermissionDenied: Il permesso del microfono è stato negato.
     microphoneStartFailed: Impossibile avviare la registrazione dal microfono.
     microphoneUnsupported: Questo runtime non supporta la registrazione dal microfono.
@@ -2647,6 +2687,7 @@ preview:
     commentPlaceholder: Aggiungi un commento...
     commentTitle: Commento {0}
     commenting: Commento in corso
+    embeddedPreviewHint: Alcuni siti bloccano l'anteprima incorporata. Apri la pagina originale in una scheda del browser.
     failedRestarting: "Riavvio del server non riuscito: {0}"
     failedToLoad: Impossibile caricare l’anteprima
     fallbackTitle: Anteprima
@@ -2720,6 +2761,7 @@ profiles:
   emptySoul: SOUL.md vuoto; inizia a scrivere la persona...
   env: env
   exportMenu: Esporta…
+  exportNeedsHost: "Il browser non può salvare un archivio del profilo. Sul host Hermes, esegui: hermes profile export {0}"
   exportProfile: Esporta profilo…
   exported: Profilo esportato
   failedCopy: Impossibile copiare il comando di configurazione
@@ -2743,9 +2785,6 @@ profiles:
     installDeviceTitle: Passare a questo dispositivo?
     localDevice: "Questo dispositivo (backend locale: installa Hermes se manca; altrimenti apri una nuova sessione)"
     onGateway: "{0} · {1}"
-    switchDeviceConfirm: Passa
-    switchDeviceDesc: Apre una nuova sessione su questo computer. La conversazione attuale resta sull’altro gateway.
-    switchDeviceTitle: Passare a questo dispositivo?
     switchTo: Passa a {0} su {1}
   importProfile: Importa profilo…
   imported: Profilo importato
@@ -2760,6 +2799,7 @@ profiles:
   newNameLabel: Nuovo nome
   newProfile: Nuovo profilo
   noProfiles: Non ci sono ancora profili.
+  notServedHere: Non disponibile qui
   notSet: Non impostato
   openInNewWindow: Apri in una nuova finestra
   refresh: Aggiorna profili
@@ -2870,6 +2910,7 @@ promptNotices:
   legacySendUnconfirmed: Questo server non ha potuto confermare l’invio precedente di questo messaggio, quindi potrebbe essere già stato elaborato. Controlla la conversazione prima di inviarlo di nuovo.
   mcpReloadDeferred: "Questa chat è occupata: la modifica MCP si applica quando il turno in corso termina e MCP si ricarica, o alla riapertura della chat"
   mcpReloadUnavailable: "Connessione non riuscita: {0}"
+  restoredDraftAttachmentsDropped: Gli allegati del tuo messaggio non inviato non sono stati ripristinati. Allega di nuovo prima di inviare.
   sessionCommands:
     busy: sessione occupata — Hermes sta ancora rispondendo. Ferma prima la risposta corrente (pulsante Stop, o Ctrl+C in un terminale), poi esegui /{0}.
     busyCompressing: sessione occupata — è in corso un /compress; esegui /{0} al termine.
@@ -2963,8 +3004,19 @@ rightSidebar:
   terminal: Terminale
   terminalCloseAll: Chiudi tutto
   terminalCloseOthers: Chiudi le altre
+  terminalDisconnectedBody: Terminale disconnesso. Premi Invio per avviare una nuova shell; lo scrollback è conservato.
+  terminalDropControl: "Questi nomi contengono caratteri di controllo che la shell interpreta come tasti: {0}"
+  terminalDropControlTitle: Non digitato nel terminale
+  terminalDropTooLarge: "Ogni file può essere al massimo {1}. Non caricati: {0}"
+  terminalDropTooLargeTitle: Troppo grande da caricare
+  terminalDropUnquotable: "Nessun modo sicuro per digitare questi nomi in {0}: {1}"
+  terminalDropUploadFailed: Impossibile caricare {0}
+  terminalGatewayNoShellBody: Questo gateway non ha accesso alla shell, quindi questo terminale non può riaprirsi. Chiudi questa scheda.
+  terminalGatewayRemoved: Gateway rimosso
+  terminalGatewayRemovedBody: Il gateway su cui girava questo terminale è stato rimosso, quindi non può riaprirsi. Chiudi questa scheda.
   terminalHide: Nascondi terminale
   terminalNew: Nuovo terminale
+  terminalNewOn: Nuovo terminale su…
   terminalOpenInteractive: Apri un nuovo terminale
   terminalReadOnly: Output in sola lettura
   terminalReadOnlyHelp: "Per rispondere ai prompt, interrompi il comando in background ed eseguilo in un nuovo terminale. Il nuovo terminale apre una shell separata: non si connette a questo processo."
@@ -3935,6 +3987,40 @@ settings:
     tokenTitle: Token di sessione
     unavailableDesc: Le impostazioni di connessione si possono modificare solo dall’app Hermes Desktop sul computer su cui è in esecuzione.
     unavailableTitle: Impostazioni del gateway non disponibili
+    webAccess:
+      failed: Impossibile cambiare l'accesso web
+      intro: Apri Hermes su questo computer dal telefono o da un altro computer, con accesso tramite il tuo account Nous. Chiunque acceda può eseguire comandi su questo computer.
+      lanUnencrypted: "La connessione non è cifrata: altri sulla rete potrebbero leggere ciò che invii e ricevi."
+      modeLan: Questa rete
+      modeLanDetail: I dispositivi sul tuo Wi-Fi aprono {0}. Usalo solo su una rete di cui ti fidi.
+      modePublic: Il mio URL
+      modePublicDetail: Un indirizzo HTTPS che già gestisci, come Tailscale Serve o un tunnel, che inoltra a http://127.0.0.1:{0}.
+      needsNous: Accedi prima al tuo account Nous sotto Provider.
+      noLan: Questo computer non ha un indirizzo di rete raggiungibile da altri dispositivi.
+      notRunningDetail: Avvialo per aprire Hermes da un altro dispositivo.
+      pendingOff: Disattivato, ma il gateway continua a servire la web app finché non si riavvia.
+      pendingOn: Salvato. Il gateway serve la web app al prossimo riavvio.
+      restartBusy: Salvato. Una chat è in esecuzione, quindi il gateway non si è riavviato. Scegli Riavvia gateway quando termina.
+      restartFailed: Salvato, ma il gateway non si è potuto riavviare. Scegli Riavvia gateway per riprovare.
+      restartFailedBecause: "Il gateway non si è potuto riavviare: {0}"
+      restartGateway: Riavvia gateway
+      restartNeeded: Riavvio necessario
+      running: In esecuzione
+      runningLan: Apri questo indirizzo su un dispositivo sulla stessa rete.
+      runningLocal: Solo questo computer può aprirlo. Fermalo, poi avvialo di nuovo per aprirlo da altri dispositivi.
+      runningPublic: Servito tramite il tuo URL.
+      start: Avvia
+      startTimedOut: Il gateway non ha servito la web app entro 90 secondi.
+      starting: Avvio
+      stop: Ferma
+      stopTimedOut: Il gateway non ha smesso di servire la web app entro 90 secondi.
+      stopped: Fermato
+      stopping: Arresto
+      title: Accesso web
+      unavailable: Non disponibile
+      unavailableDetail: "Il gateway non ha potuto servire la web app: {0}"
+    webappHostDesc: La Webapp usa sempre il host Hermes che la serve. Per cambiare gateway, accedi a Hermes Cloud o gestisci le connessioni salvate dall'app desktop di Hermes.
+    webappHostTitle: Host Hermes
   hudModifier:
     description: Premi e rilascia ⌘ + Opzione su Mac, oppure Ctrl + Alt su Windows/Linux, per portare l’HUD in primo piano da qualsiasi app. Disattivato per impostazione predefinita; si applica solo a questo dispositivo.
     missingHelper: A questa installazione di Hermes manca l’assistente del gesto dell’HUD. Aggiorna o reinstalla Hermes e riprova.
@@ -4118,6 +4204,30 @@ settings:
     statusOff: Disattivato
     test: Prova connessione
     usage30d: "{0} usi/30 gg"
+  memoryLayers:
+    activeProvider: Provider di memoria attivo
+    builtinDesc: MEMORY.md e USER.md sono la memoria di Hermes, separata da qualsiasi provider esterno. Entrambi si caricano nelle sessioni per impostazione predefinita; i toggle memoria e profilo utente in Impostazioni › Memoria e contesto disattivano ciascuno. Un provider si aggiunge a questo livello; non lo sostituisce.
+    builtinLayer: Livello integrato
+    builtinMemory: solo memoria integrata
+    noProvider: Nessuno — solo memoria integrata
+    noProviderDesc: Hermes usa solo il livello integrato sotto. Scegli un provider esterno sotto Impostazioni › Memoria e contesto per aggiungerne uno.
+    "off": Disattivato
+    "on": Attivato
+    onByDefault: Attivato per impostazione predefinita
+    onlyFile: "{0} solo"
+    providerDesc: "{0} aggiunge il proprio richiamo a ogni sessione, sopra il livello integrato."
+    providerNotReadyDesc: "{0} è il provider salvato ma non aggiunge richiamo finché non è pronto. Il livello integrato funziona comunque."
+    providerUnknownDesc: "{0} è il provider salvato; Hermes non ha potuto leggere se è pronto."
+    retry: Riprova
+    selectedDesc: "Non ancora attivo: le sessioni continuano a usare {0} finché questa scelta non viene salvata."
+    selectedProvider: Provider di memoria selezionato
+    status:
+      missing: non installato
+      needs_config: da configurare
+      ready: pronto
+      unavailable: non disponibile
+    statusUnavailable: Stato memoria non disponibile
+    statusUnavailableDesc: Impossibile leggere quale provider di memoria è attivo o se è pronto.
   modeOptions:
     dark:
       description: Workspace con luminosità ridotta
@@ -4340,6 +4450,15 @@ settings:
     sessions: Sessioni
     vault: Password e accessi
   notifications:
+    browserPermission:
+      allow: Consenti
+      states:
+        default: Mostra avvisi da questo browser mentre la scheda è in background. Finché non dai il consenso, lampeggia solo il titolo della scheda.
+        denied: Bloccato nelle impostazioni del sito di questo browser. Il titolo della scheda lampeggia comunque.
+        granted: Consentito. Gli avvisi si mostrano mentre questa scheda è in background; lampeggia anche il titolo della scheda.
+        insecure: Richiede HTTPS, come Tailscale serve. Su HTTP semplice lampeggia solo il titolo della scheda.
+        unsupported: Questo browser non può mostrare notifiche. Il titolo della scheda lampeggia comunque.
+      title: Notifiche del browser
     completionSoundDesc: Riproduce un suono quando termina il turno di un agente. Scegli un’impostazione predefinita e provala qui.
     completionSoundPreview: Anteprima
     completionSoundTitle: Suono di completamento
@@ -4385,8 +4504,6 @@ settings:
     missing: Questo plugin non ha una pagina di impostazioni. Potrebbe essere disattivato o disinstallato.
     pageCount: "{0} pagine"
   plugins:
-    disable: Disattiva
-    enable: Attiva
     failed: fallito
     installModal:
       advanced: Avanzate
@@ -4409,16 +4526,19 @@ settings:
       includesHeading: Questo pacchetto include
       insecureWarning: Questa URL usa uno schema non sicuro o locale. Per le installazioni di produzione, usa https:// o git@.
       install: Installa
+      installAnyway: Installa comunque
       installFromGit: Installa da Git
       installUncertain: Hermes ha smesso di attendere l’esito dell’installazione, ma è possibile che il plugin sia ancora in installazione. Chiudi questa finestra e aggiorna l’elenco dei plugin prima di reinstallarlo.
       installing: Installazione…
       installsAndEnables: Si installa per {0} e si attiva subito.
       installsOnly: Si installa per {0}.
       latestCommit: Ultimo commit
+      legacyBackendConfirm: "Questo backend è più vecchio di questa app, quindi non può garantire che la versione che hai esaminato sia quella installata: se il repository è cambiato da allora, si installa la versione più recente. Aggiorna il backend per avere questa garanzia."
       missingEnv: "{0} è installato, ma richiede una chiave per funzionare: {1}. Aggiungila ora o gli strumenti del plugin falliranno."
       missingEnvAction: Configuralo
       nextChat: altri strumenti disponibili nella tua prossima chat
       nothingToInstall: Questo pacchetto non ha niente da installare qui.
+      partialInstall: "Solo una parte del plugin è installata: la metà agente è al commit {0}, ma la metà desktop non ha potuto seguire perché il repository è cambiato da quando l'hai esaminato. Attiva Reinstalla forzatamente in Avanzate per sostituire entrambe le metà con la versione mostrata, oppure Annulla per tenere solo la metà agente."
       pinToCommit: Fissa a un commit (opzionale)
       pinToCommitHint: Chiunque installi questo SHA ottiene lo stesso codice; poi il plugin rifiuta gli aggiornamenti finché non viene fissato di nuovo. Lascialo vuoto per usare l’ultimo commit.
       pinToCommitInvalid: Deve essere uno SHA di commit completo di 40 caratteri (non sono accettati branch né tag).
@@ -4436,6 +4556,7 @@ settings:
       serverNotConnected: "Il server MCP {0} non è connesso: {1}"
       skillsReady: 3 skills pronte
       sourceHeading: Codice sorgente
+      sourceMoved: Il repository è cambiato da quando l'hai esaminato. Esamina la nuova versione (commit {0}) prima di installarla.
       title: Installa plugin
       toolsConnected: "{0} strumenti connessi"
       unverified: Non verificato
@@ -4542,7 +4663,7 @@ settings:
     clearDirFailed: Impossibile cancellare la directory predefinita
     defaultDirDesc: Le nuove sessioni iniziano in questa cartella a meno che tu ne scelga un’altra. Lasciala non definita per usare la tua directory home.
     defaultDirTitle: Directory di progetto predefinita
-    defaultDirUpdated: Directory di progetto predefinita aggiornata; avvia una nuova chat (Ctrl/⌘+N) perché la modifica abbia effetto.
+    defaultDirUpdated: Directory di progetto predefinita aggiornata; avvia una nuova chat ({0}) perché la modifica abbia effetto.
     defaultsTo: "Predefinito: {0}."
     deleteConfirm: Eliminare definitivamente "{0}"? Questa operazione non può essere annullata.
     deleteFailed: Impossibile eliminare
@@ -4897,6 +5018,8 @@ shell:
     usageTip: "{0} è vicino al limite di utilizzo."
     usageWindow: "{0}: rimane {1} %, si azzera {2}"
   modelOptions:
+    daybreak: Daybreak
+    daybreakFailed: Aggiornamento Daybreak fallito
     effort: Sforzo
     fast: Veloce
     fastFailed: Impossibile aggiornare la modalità veloce
@@ -5181,7 +5304,6 @@ sidebar:
     archive: Archivia
     backgroundRunning: Attività in background in esecuzione
     branchFrom: Branch
-    continuationOrigin: "Continuazione automatica: questa conversazione è stata compressa e proseguita"
     copyId: Copia ID
     copyIdFailed: Impossibile copiare l’ID di sessione
     deleteDesc: “{0}” verrà eliminato in modo permanente. Impossibile annullare.
@@ -5317,6 +5439,9 @@ skills:
     verdictSafe: Sicuro
     viewScan: Vedi analisi
   loading: Caricamento delle capacità...
+  lock: Blocca
+  lockHint: L'agente non può modificare questa skill mentre è bloccata. Puoi comunque modificarla tu.
+  locked: Bloccata
   needsKeys: Richiede chiavi
   noDescription: Senza descrizione.
   noSkillsDesc: Prova una ricerca più ampia o un’altra categoria.
@@ -5342,6 +5467,17 @@ skills:
     empty: Nessun plugin dell’agente installato per questo profilo.
     emptyAll: Ancora nessun plugin.
     emptyHint: Esplora il catalogo qui sotto e installa un plugin verificato con un clic.
+    folderAccess:
+      hint: "{0} può leggere e modificare file in queste cartelle. La revoca ha effetto immediato."
+      loadFailed: Impossibile caricare le cartelle condivise con {0}.
+      pickerButton: Consenti accesso
+      pickerTitle: Scegli una cartella per {0}
+      refusedProtected: "{0} non può usare quella cartella: contiene impostazioni, chiavi o dati dei plugin di Hermes. Scegli una cartella che non li contenga."
+      revoke: Revoca
+      revokeFailed: Impossibile revocare l'accesso alle cartelle per {0}
+      revokeLabel: Revoca accesso a {0}
+      revoked: "{0} non può più usare {1}."
+      title: Accesso alle cartelle
     halfAgent: Agente
     halfAgentIn: Agente in {0}
     halfDesktop: Desktop
@@ -5358,6 +5494,17 @@ skills:
     pinnedBadge: fissato @ {0}
     pinnedProvenance: Fissato al commit {0}. Gli aggiornamenti vengono rifiutati finché non viene reinstallato con un nuovo commit fissato.
     portableBadge: portatile
+    previewScriptAccessLabel: Script della pagina
+    previewScriptAccessNone: Chiede prima di eseguire script su una pagina
+    previewScriptAllow: Consenti su questo sito
+    previewScriptDeny: Non consentire
+    previewScriptPromptBody: "{0} vuole eseguire JavaScript nell'anteprima del Browser su {1}."
+    previewScriptPromptRevokeHint: Si applica solo a questo sito. Puoi revocarlo in Capacità ▸ Plugin.
+    previewScriptPromptRisk: Gli script possono leggere e modificare tutto su quel sito, incluse le pagine degli account a cui sei connesso lì.
+    previewScriptPromptTitle: Consentire a {0} di eseguire script su questa pagina?
+    previewScriptRevoke: Revoca accesso a {0}
+    previewScriptRevokeUnsaved: Impossibile salvare la modifica, quindi dura solo fino al riavvio di Hermes. {0} è bloccato su {1} per ora.
+    previewScriptRevoked: "{0} non può più eseguire script su {1}."
     serverStates:
       app_not_running: l’app non è in esecuzione
       connected: connesso
@@ -5428,6 +5575,7 @@ skills:
   toolsetEnabled: Set attivato
   toolsetsEnabled: "{0}/{1} set attivati"
   toolsetsRefreshFailed: Impossibile aggiornare i set di strumenti
+  unlockedHint: Blocca per impedire all'agente di modificare questa skill. Puoi comunque modificarla tu.
   usageCount: usato {0}×
   visionModelHint: Vision usa la configurazione del tuo modello ausiliario; il modello compatibile con le immagini si sceglie lì, non qui per ogni provider.
   visionModelLink: Scegli modello di visione in Impostazioni → Modelli
@@ -5798,8 +5946,10 @@ updates:
   updateReady: C’è un aggiornamento pronto ({0} modifiche incluse).
   updateReadyUnknown: C’è un nuovo aggiornamento pronto.
   version: Versione {0}
+  versionDetailsBackend: Backend connesso
   versionDetailsBody: Questa installazione è gestita al di fuori dell’app. Aggiornala allo stesso modo in cui l’hai installata.
   versionDetailsBuildOrigin: Origine della compilazione
+  versionDetailsClient: Questo dispositivo
   versionDetailsCommit: Commit
   versionDetailsDistribution: Distribuzione
   versionDetailsDistributionDesktop: Applicazione desktop
@@ -5916,6 +6066,7 @@ zones:
   saveCurrentAs: Salva il layout attuale come modello
   showStripTab: Mostra {0}
   showTabStrip: Mostra le schede
+  tabActions: Azioni per {0}
   tabCount: "{0} schede"
   templateColumns: Colonne
   templateGrid: Griglia
