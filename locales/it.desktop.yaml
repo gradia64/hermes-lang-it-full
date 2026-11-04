@@ -2304,6 +2304,31 @@ messaging:
   platformDisabled: "{0} disattivato"
   platformEnabled: "{0} attivato"
   recommended: Consigliato
+  relayLink:
+    badge: Nessun token bot necessario
+    copied: Copiato
+    copy: Copia messaggio
+    copyFailed: Copia non riuscita. Digita invece {0}.
+    expired: Quel codice è scaduto prima di essere usato. Genera un nuovo codice e riprova.
+    intro: "{0} raggiunge questo agente tramite il bot Hermes condiviso. Collega a esso il tuo account {0} e scrivi al bot per parlare con il tuo agente."
+    link: Collega {0}
+    linkAnother: Collega un altro account {0}
+    linked: Account {0} collegato. Scrivi al bot per parlare con il tuo agente.
+    linkedAccounts: Account collegati
+    managed: Gestito da Team Gateway
+    managedIntro: Gli account di questo agente si collegano da Nous Portal.
+    managedNote: Team Gateway trasporta la messaggistica su questo deployment, quindi il gateway spegne la connessione diretta a {0} a ogni avvio. Per usarla insieme al relay, imposta GATEWAY_RELAY_ALLOW_DIRECT_PLATFORMS=true nell’ambiente del gateway (una connessione diretta impedisce all’istanza di scalare a zero e può consegnare i messaggi due volte).
+    noNewAccount: Il codice non è più attivo e non è comparso nessun nuovo account. Se il tuo account {0} non è in elenco, genera un nuovo codice e riprova.
+    open: Apri {0}
+    openPortal: Collega gli account in Nous Portal
+    qrAlt: Codice QR per il bot {0} condiviso
+    refused: "{0} ha rifiutato il collegamento. Genera un nuovo codice e riprova."
+    stepOpen: 1. Scansiona il codice con il telefono, oppure apri il bot in {0}.
+    stepSend: "2. Invia al bot questo messaggio dall’account che vuoi collegare:"
+    title: Team Gateway
+    unlink: Scollega
+    unlinkFailed: Impossibile scollegare quell’account
+    waiting: In attesa che il bot veda il tuo messaggio. Il codice funziona una sola volta.
   removeListEntry: Rimuovi
   replaceValue: Sostituisci valore attuale
   required: Obbligatorio
@@ -4010,6 +4035,12 @@ settings:
       runningLocal: Solo questo computer può aprirlo. Fermalo, poi avvialo di nuovo per aprirlo da altri dispositivi.
       runningPublic: Servito tramite il tuo URL.
       start: Avvia
+      startElapsed: "{0} trascorsi"
+      startStages:
+        building: Compilazione della web app in corso. Può richiedere alcuni minuti.
+        preparing: Preparazione della web app. La compilazione può richiedere alcuni minuti.
+        registering: Configurazione dell’accesso Nous per questo indirizzo.
+        restarting: Riavvio del gateway per servire la web app.
       startTimedOut: Il gateway non ha servito la web app entro 90 secondi.
       starting: Avvio
       stop: Ferma
