@@ -200,6 +200,10 @@ assistant:
     installAction: Installa
     installTitle: Aggiungi server MCP
     installed: "{0} installato"
+    launchCommand: "Esegue: {0}"
+    launchCwd: "Directory di lavoro: {0}"
+    launchEnv: "Env: {0}"
+    launchRemote: "Si connette a: {0}"
     reloadFailed: Server salvato, ma il ricaricamento degli strumenti MCP non è riuscito — verranno caricati nella prossima sessione
     sendFailed: Impossibile inviare la risposta di configurazione MCP
     toolCount: "{0} strumenti"
@@ -4446,9 +4450,6 @@ settings:
       review:
         hint: subagente revisore di /review
         label: Revisione
-      skills_hub:
-        hint: Ricerca delle skill
-        label: Hub delle skill
       title_generation:
         hint: Titoli delle sessioni
         label: Generazione dei titoli
@@ -5099,6 +5100,14 @@ shell:
         subagent_definitions: Definizioni dei subagenti
         system_prompt: Prompt di sistema
         tool_definitions: Definizioni degli strumenti
+      compact:
+        action: Compatta la conversazione
+        busyHint: Termina o interrompi prima la risposta in corso
+        confirm: Compatta
+        hint: Riassumi il contesto più vecchio per fare spazio. Si continua in questa stessa conversazione.
+        question: Comprimere questa chat in un riassunto?
+        questionNamed: Comprimere “{0}” in un riassunto?
+        working: Compattazione…
       empty: Ancora nessun dato di contesto
       loading: Caricamento del dettaglio…
       percentFull: "{0}% pieno"
@@ -5485,6 +5494,9 @@ skills:
     agentBlurb: "Ampliano l’agente del profilo selezionato: strumenti, hook, provider. Si applicano dopo il riavvio del gateway."
     agentTitle: Plugin dell’agente
     alreadyInstalled: "{0} è già installato in questo profilo."
+    autoUpdate: Aggiornamento automatico
+    autoUpdateFailed: Impossibile cambiare l’aggiornamento automatico dei plugin
+    autoUpdateTip: Applica automaticamente gli aggiornamenti dei plugin quando il gateway controlla (ogni {0} h). Il codice aggiornato si carica nelle nuove sessioni.
     catalogProvenance: Installato dal catalogo di Hermes al commit fissato {0}.
     deepLinkCatalogInvalidName: Nome del catalogo nel link mancante o non valido.
     deepLinkCatalogUnavailable: Impossibile caricare il catalogo dei plugin di Hermes. Controlla la tua connessione e riapri il link.
@@ -5568,6 +5580,11 @@ skills:
     uninstallTip: Disinstalla {0} da {1}
     uninstalled: "{0} disinstallato. Riavvia il gateway per rimuoverlo."
     uninstalledDesktop: "{0} disinstallato."
+    updateAll: Aggiorna tutti
+    updateAllDone: "Aggiornati: {0}, {1} da rivedere, {2} non riusciti"
+    updateAllFailed: Impossibile aggiornare i plugin
+    updateAllNone: Tutti i plugin sono aggiornati
+    updateAllTip: Controlla ogni plugin installato e applica gli aggiornamenti che non richiedono revisione
     updateConsentBody: "Il nuovo commit fissato di {0} nel catalogo ({1}) aggiunge superfici che la versione installata non ha. Applicalo solo se ti fidi di esse:"
     updateConsentConfirm: Applica aggiornamento
     updateConsentTitle: "{0} chiede di più"
@@ -5580,6 +5597,7 @@ skills:
     updateToPin: Aggiorna a {0}
     updated: "{0} è stato aggiornato al commit fissato attuale del catalogo. Riavvia il gateway per applicarlo."
     updatedGit: "{0} aggiornato all’ultimo commit."
+    updatingAll: Aggiornamento…
   provenance:
     agent: Appreso
     bundled: Integrato
