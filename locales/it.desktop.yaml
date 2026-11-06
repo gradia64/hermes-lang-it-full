@@ -221,6 +221,7 @@ assistant:
   thread:
     attachingFile: Allegamento file…
     branchNewChat: Ramifica in una nuova chat
+    contentRefusedNotice: Questo messaggio è stato rifiutato dal filtro di sicurezza del modello — prova una query diversa.
     copy: Copia
     copyFullResponse: Copia la risposta completa
     dismissError: Ignora errore
@@ -4353,6 +4354,12 @@ settings:
         blockedUnavailable: I subagenti non si avvieranno finché {0} non potrà girare qui. Il suo plugin segnala che non può.
         blockedUnregistered: I subagenti non si avvieranno finché non viene installato e attivato un plugin che fornisce “{0}”.
         createRoute: Aggiungi route
+        daybreakHint: Accesso fidato OpenAI con guardrail ridotti, solo per questa route.
+        daybreakLabel: Daybreak
+        daybreakNeedsPlugin: Il tuo plugin Advanced Delegation non gestisce ancora le route Daybreak. Aggiornalo, oppure disattivalo.
+        daybreakOff: Disattivato
+        daybreakOn: Attivato
+        daybreakUnlisted: Questo modello non è tra quelli abilitati a Daybreak sul tuo account. Disattivalo oppure scegli un altro modello.
         defaultBadge: Predefinita
         deleteConfirmAction: Elimina route
         deleteConfirmBody: I subagenti non potranno più sceglierla.
