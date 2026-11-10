@@ -748,6 +748,7 @@ catalog:
   moreToExplore: Altro da esplorare
   moreToExploreBlurb: Gli angoli più piccoli del catalogo, tutti in un solo posto.
   mostStarred: Più stellati
+  mostUsed: Più usati
   newest: Più recenti
   nextSlide: Successivo in evidenza
   noResults: Nessuna corrispondenza
@@ -808,7 +809,9 @@ catalog:
         label: Sfoglia, lavora e automatizza
     toolCount: "{0} strumenti"
   tryAnother: Prova un’altra ricerca o cancella i filtri.
+  updateAvailable: Aggiornabile
   updatedDate: Aggiornato
+  updatesAvailable: Aggiornamenti · {0}
   version: Versione
 commandCenter:
   actionDone: completato
@@ -2751,6 +2754,16 @@ preview:
     tryAgain: Riprova
     unknownError: errore sconosciuto
     unreachableDescription: Impossibile accedere alla pagina di anteprima.
+    vaultEmpty: Nessun accesso salvato per questo sito
+    vaultFill: Compila con un accesso salvato
+    vaultFillFailed: Impossibile compilare l’accesso
+    vaultFilled: Compilato {0}. Controlla il modulo, poi accedi.
+    vaultLoadFailed: Impossibile caricare gli accessi salvati
+    vaultLoading: Caricamento degli accessi salvati…
+    vaultOpenSettings: Apri le impostazioni delle credenziali salvate
+    vaultPageNotReady: La pagina si sta ancora caricando. Riprova quando ha finito.
+    vaultTitle: Accessi salvati per {0}
+    vaultUnlock: Sblocca {0}
     watchFailed: "Impossibile monitorare il file dell’anteprima: {0}"
     workspaceReloading: Il workspace è cambiato, ricaricamento dell’anteprima
 profiles:
@@ -4057,6 +4070,12 @@ settings:
       unavailableDetail: "Il gateway non ha potuto servire la web app: {0}"
     webappHostDesc: La Webapp usa sempre il host Hermes che la serve. Per cambiare gateway, accedi a Hermes Cloud o gestisci le connessioni salvate dall'app desktop di Hermes.
     webappHostTitle: Host Hermes
+    webappOauthPaste:
+      description: Se la scheda di accesso si è chiusa su un indirizzo che non si caricava (questo browser non è sul computer del gateway), incolla qui quell’indirizzo.
+      failed: Impossibile completare l’accesso
+      finish: Completa
+      placeholder: http://127.0.0.1:…/webapp/gateway-connections/oauth/callback?…
+      title: Completa l’accesso
   hudModifier:
     description: Premi e rilascia ⌘ + Opzione su Mac, oppure Ctrl + Alt su Windows/Linux, per portare l’HUD in primo piano da qualsiasi app. Disattivato per impostazione predefinita; si applica solo a questo dispositivo.
     missingHelper: A questa installazione di Hermes manca l’assistente del gesto dell’HUD. Aggiorna o reinstalla Hermes e riprova.
@@ -4787,6 +4806,11 @@ settings:
         enable: Usa il mio profilo
         notNow: Non ora
         title: Mantieni l’accesso ai tuoi siti
+      reimportSignins: Reimporta gli accessi
+      signinsFailed: Impossibile importare gli accessi nel browser integrato
+      signinsImported: Il browser integrato ha effettuato l’accesso con {0} cookie dal tuo profilo del browser.
+      signinsImportedTitle: Accessi del browser integrato
+      signinsRemote: Questo backend è in esecuzione su un’altra macchina, quindi il suo profilo del browser non viene importato nel browser integrato.
     failedLoad: Impossibile caricare la configurazione degli strumenti
     failedRemove: Impossibile rimuovere {0}
     failedReveal: Impossibile mostrare {0}
