@@ -204,7 +204,7 @@ assistant:
     launchCwd: "Directory di lavoro: {0}"
     launchEnv: "Env: {0}"
     launchRemote: "Si connette a: {0}"
-    reloadFailed: Server salvato, ma il ricaricamento degli strumenti MCP non è riuscito — verranno caricati nella prossima sessione
+    reloadFailed: "Server salvato, ma il ricaricamento degli strumenti MCP non è riuscito: verranno caricati nella prossima sessione"
     sendFailed: Impossibile inviare la risposta di configurazione MCP
     toolCount: "{0} strumenti"
   themePicker:
@@ -221,7 +221,7 @@ assistant:
   thread:
     attachingFile: Allegamento file…
     branchNewChat: Ramifica in una nuova chat
-    contentRefusedNotice: Questo messaggio è stato rifiutato dal filtro di sicurezza del modello — prova una query diversa.
+    contentRefusedNotice: "Questo messaggio è stato rifiutato dal filtro di sicurezza del modello: prova una query diversa."
     copy: Copia
     copyFullResponse: Copia la risposta completa
     dismissError: Ignora errore
@@ -607,7 +607,7 @@ billingBlock:
   fallbackMessage: Il tuo account ha esaurito i crediti. Aggiungi crediti per continuare.
   openBilling: Apri la fatturazione
   titleNous: Senza crediti Nous
-  titleProvider: Senza crediti — {0}
+  titleProvider: "Senza crediti: {0}"
 boot:
   causes:
     diskFull: Il disco è pieno, quindi Hermes non è riuscito ad avviarsi.
@@ -899,7 +899,9 @@ commandCenter:
     curatorNeverRan: Non è mai stato eseguito
     curatorPaused: In pausa
     debugShare: Condividi dati di debug
-    debugShareDesc: Carica un rapporto e log con i dati sensibili oscurati e ottieni link da condividere (eliminati automaticamente dopo 6 h)
+    debugShareConfirm: Caricare il rapporto di debug su un paste pubblico?
+    debugShareConfirmDesc: "Carica un riepilogo su un servizio di paste pubblico: versioni di Hermes, Python e del sistema operativo, nomi delle piattaforme e dei toolset connessi, nomi delle chiavi di configurazione (senza valori) e conteggi di avvisi ed errori. Non contiene righe di log né testo dei messaggi. I paste si eliminano automaticamente dopo 6 ore; se paste.rs non è raggiungibile, il ripiego su dpaste.com li mantiene pubblici per 1 giorno e non è possibile eliminarli prima."
+    debugShareDesc: Carica un riepilogo (versioni, chiavi di configurazione, conteggi di errori; nessun testo di log) e ottieni un link condivisibile (eliminato automaticamente dopo 6 h)
     debugShareFailed: Impossibile condividere i dati di debug
     debugShareLinks: Link da condividere
     debugShareRunning: Caricamento del rapporto di debug…
@@ -951,7 +953,7 @@ commandCenter:
   noUsage: Nessun utilizzo negli ultimi {0} giorni.
   openBrowser: Alterna browser
   openFolder: Apri cartella come progetto…
-  openFolderAt: Apri cartella come progetto — {0}
+  openFolderAt: "Apri cartella come progetto: {0}"
   output: uscita
   paletteTitle: Palette dei comandi
   pets:
@@ -1073,7 +1075,7 @@ composer:
     /compress: Comprimi il contesto di questa conversazione
     /context: Mostra la vista dettagliata della finestra di contesto con indicatore di utilizzo, suddivisione per categoria, statistiche di compressione e prestazioni
     /copy: copia la selezione o l’ultimo messaggio dell’assistente
-    /debug: Carica un report di debug (informazioni di sistema + log) e ottieni link da condividere
+    /debug: "Rapporto di debug (versioni, chiavi di configurazione, conteggi di errori; nessun testo di log): mostra l’informativa sulla privacy; /debug upload condivide i link"
     /details: controlla il livello di dettaglio della trascrizione
     /diff: Mostra le modifiche git nella directory di lavoro
     /egress: Mostra lo stato del proxy di uscita di Docker
@@ -1190,11 +1192,11 @@ composer:
   queueResumeTip: La coda è stata messa in pausa all’arresto; riprendi l’invio dei turni in coda
   queueSend: Invia
   queueSendNext: Prossimo
-  queueSteer: Reindirizza — incanala subito il turno in corso
+  queueSteer: "Reindirizza: incanala subito il turno in corso"
   queueStuckBody: Un turno in coda non è stato inviato. È ancora in coda; riprova.
   queueStuckTitle: Messaggio in coda non inviato
   queued: "{0} in coda"
-  queuedPaused: "{0} in coda — in pausa"
+  queuedPaused: "{0} in coda (in pausa)"
   queuedTerminalSelectionExpiredBody: Questa selezione del terminale in coda non è più disponibile. Riseleziona le righe (Ctrl/Cmd+L) e rimetti il messaggio in coda.
   readingAloud: Lettura ad alta voce
   redirect: Reindirizza l’esecuzione in corso
@@ -1252,9 +1254,9 @@ composer:
   voiceEngineLiveNeedsKey: Richiede una chiave API di OpenAI
   voiceEngineLiveShort: GPT-Live
   wakeWord: Parola di attivazione "{0}"
-  wakeWordListening: "Parola di attivazione: \"{0}\" — in ascolto"
-  wakeWordOff: "Parola di attivazione: \"{0}\" — disattivata"
-  wakeWordPausedVoice: "Parola di attivazione: \"{0}\" — in pausa durante la chat vocale"
+  wakeWordListening: "Parola di attivazione: \"{0}\" (in ascolto)"
+  wakeWordOff: "Parola di attivazione: \"{0}\" (disattivata)"
+  wakeWordPausedVoice: "Parola di attivazione: \"{0}\" (in pausa durante la chat vocale)"
   wakingProfile: Risveglio di {0}…
 connectorOffer:
   body: Accedi con un account Nous gratuito per mantenere su tuo account le app che hai collegato, come Gmail o Slack.
@@ -2306,7 +2308,7 @@ messaging:
   openDocs: Apri la documentazione
   openLogs: Apri i log
   openSetupGuide: Apri guida alla configurazione
-  pairingLockedOut: Troppi errori di approvazione — questa piattaforma è bloccata. Riprova più tardi.
+  pairingLockedOut: "Troppi errori di approvazione: questa piattaforma è bloccata. Riprova più tardi."
   pendingAria: "{0} richiestae di accoppiamento pendentei"
   pendingRequests: Richieste in attesa ({0})
   platformDisabled: "{0} disattivato"
@@ -2489,7 +2491,7 @@ notifications:
   dismiss: Ignora notifica
   errors:
     codeSkewRestartRequired: Hermes si è aggiornato, ma esegue ancora la versione precedente. Riavvialo per completare l’aggiornamento.
-    diskFull: Disco pieno — libera spazio e riprova.
+    diskFull: "Disco pieno: libera spazio e riprova."
     elevenLabsNeedsKey: L’input vocale richiede una chiave ElevenLabs. Aggiungine una in Impostazioni → Chiavi.
     elevenLabsRejectedKey: ElevenLabs non ha accettato la tua chiave API. Aggiornala in Impostazioni → Chiavi e riprova.
     gatewayAuthFailed: Questo Hermes non accetta più il tuo accesso salvato. Apri Gateways ed effettua di nuovo l’accesso (o incolla un nuovo token di accesso) e riprova.
@@ -2515,14 +2517,14 @@ notifications:
   more: "{0} notifiche in più"
   native:
     approvalTitle: Approvazione necessaria
-    approvalTitleNamed: Approvazione necessaria — {0}
+    approvalTitleNamed: "Approvazione necessaria: {0}"
     approveAction: Approva
     backgroundDoneTitle: Attività in background completata
     backgroundFailedTitle: Attività in background non riuscita
     creditsTitle: Crediti
     inputBody: Hermes è in attesa della tua risposta.
     inputTitle: Informazioni necessarie
-    inputTitleNamed: È necessaria una risposta — {0}
+    inputTitleNamed: "È necessaria una risposta: {0}"
     rejectAction: Rifiuta
     turnDoneBody: ""
     turnDoneTitle: Hermes ha terminato
@@ -2955,8 +2957,8 @@ promptNotices:
   mcpReloadUnavailable: "Connessione non riuscita: {0}"
   restoredDraftAttachmentsDropped: Gli allegati del tuo messaggio non inviato non sono stati ripristinati. Allega di nuovo prima di inviare.
   sessionCommands:
-    busy: sessione occupata — Hermes sta ancora rispondendo. Ferma prima la risposta corrente (pulsante Stop, o Ctrl+C in un terminale), poi esegui /{0}.
-    busyCompressing: sessione occupata — è in corso un /compress; esegui /{0} al termine.
+    busy: "sessione occupata: Hermes sta ancora rispondendo. Ferma prima la risposta corrente (pulsante Stop, o Ctrl+C in un terminale), poi esegui /{0}."
+    busyCompressing: "sessione occupata: è in corso un /compress; esegui /{0} al termine."
     countOne: "{0} messaggio in coda"
     countOther: "{0} messaggi in coda"
     queueEditKept: È partito o è stato rifiutato prima che la tua modifica fosse salvata. Il testo modificato è nel compositore.
@@ -2967,12 +2969,12 @@ promptNotices:
     queued: "in coda: \"{0}\""
     retryNothing: niente da ritentare
     retryUnsupported: "/retry: retry non supporta contenuti multimediali o parti sconosciute"
-    steerNoActiveTurn: "nessun turno attivo — in coda per il prossimo: \"{0}\""
-    steerQueued: "steer in coda — arriva dopo la prossima chiamata a strumenti: \"{0}\""
-    steerRejected: steer rifiutato — nessun turno attivo, messo in coda per il prossimo turno
+    steerNoActiveTurn: "nessun turno attivo, in coda per il prossimo: \"{0}\""
+    steerQueued: "steer in coda, arriva dopo la prossima chiamata a strumenti: \"{0}\""
+    steerRejected: "steer rifiutato: nessun turno attivo, messo in coda per il prossimo turno"
     steerUsage: "uso: /steer <prompt>"
-    undidOne: annullato {0} messaggio — il messaggio rimosso è nel compositore
-    undidOther: annullati {0} messaggi — il messaggio rimosso è nel compositore
+    undidOne: "annullato {0} messaggio: il messaggio rimosso è nel compositore"
+    undidOther: "annullati {0} messaggi: il messaggio rimosso è nel compositore"
     undoNothing: niente da annullare
     undoUsage: "uso: /undo [N]"
   staleTurnUnavailable: Quel messaggio non è più nella cronologia di questa chat.
@@ -3012,7 +3014,7 @@ prompts:
   vaultUnlockSendFailed: Impossibile inviare la password principale
   vaultUnlockTitle: Sblocca {0}
 remoteDisplayBanner:
-  message: Rendering software attivo — rilevato uno schermo remoto ({0}). L’accelerazione GPU è stata disattivata per evitare lo sfarfallio.
+  message: "Rendering software attivo: rilevato uno schermo remoto ({0}). L’accelerazione GPU è stata disattivata per evitare lo sfarfallio."
 rightSidebar:
   addToChat: Aggiungi alla chat
   aria: Barra laterale destra
@@ -3220,7 +3222,7 @@ settings:
       unreachable: Impossibile accedere alla galleria di petdex. Controlla la tua connessione e riapri questa pagina.
     product: Prodotto
     productDesc: Attività degli strumenti leggibile con riepiloghi concisi.
-    reactionsDesc: Reazioni emoji in stile iMessage — reagisci ai messaggi, e Hermes può reagire ai tuoi.
+    reactionsDesc: "Reazioni emoji in stile iMessage: reagisci ai messaggi, e Hermes può reagire ai tuoi."
     reactionsTitle: Reazioni ai messaggi
     reasoningCollapsedDesc: Mantiene disponibile il ragionamento in streaming senza espanderlo finché non lo apri.
     reasoningCollapsedTitle: Comprimi il ragionamento per impostazione predefinita
@@ -3285,6 +3287,57 @@ settings:
     userBubbleTitle: Bolla del messaggio
     vibeHeartsDesc: Cuori fluttuanti quando dici grazie, ti voglio bene, bel bot o invii un cuore. Indipendente dalle reazioni ai messaggi di sopra.
     vibeHeartsTitle: Cuori di vibe
+  backup:
+    acknowledge: "Ho capito: questo sostituisce {0}"
+    backup: Backup
+    backupCommand: Fai il backup di questo agente
+    backupFailed: Il backup non è stato completato
+    backupHelp: "Un solo file con tutto: profili, impostazioni, memoria, skill, attività pianificate, cronologia delle chat e chiavi. Conservalo al sicuro."
+    backupKept: Conservato sull’agente in {0}
+    backupRunning: Backup in corso…
+    backupSaved: Salvato.
+    backupTitle: Fai il backup di questo agente
+    botNote: I bot di messaggistica (Telegram, Discord…) arrivano disattivati su {0}, così questo computer continua a rispondere. Quando vuoi, attivali lì dalla pagina Messaggistica.
+    botsOff: "{0} sono arrivati disattivati su {1}. Quando vuoi, spostali dalla pagina Messaggistica: spenti qui, attivi lì."
+    cancel: Annulla
+    chooseAgent: Scegli l’agente cloud da sostituire
+    confirmTitle: Sostituire {0} con questo agente?
+    doneHelp: "{0} ora è questo agente."
+    doneTitle: Trasferito
+    down: Offline
+    errorTitle: Il trasferimento si è interrotto
+    gatewayDown: "I file sono arrivati, ma {0} non si è riavviato: i suoi bot e le sue attività pianificate non sono in esecuzione. Riavvialo dal portale Hermes Cloud, oppure esegui `hermes gateway start` su di esso."
+    intro: Salva questo agente in un file, oppure portalo su un agente Hermes Cloud.
+    keepsTitle: L’agente cloud conserva
+    newAgentHelp: Creane uno nel Nous Portal, poi torna qui.
+    newAgentTitle: Nuovo agente cloud
+    noAgentsHelp: Creane uno nel Nous Portal, poi torna qui.
+    noAgentsTitle: Ancora nessun agente cloud
+    openAgent: Apri agente
+    openPortal: Apri portale
+    openProviders: Apri Provider
+    partialHelp: "{0} potrebbe essere sostituito solo in parte. Annulla lo riporta com’era prima del trasferimento."
+    pickOrg: Scegli un team
+    provisioning: Configurazione…
+    replace: Sostituisci {0}
+    replacesTitle: Sostituiti sull’agente cloud
+    retry: Riprova
+    signIn: Accedi
+    signInHelp: Usa l’account Nous a cui appartengono i tuoi agenti cloud.
+    signInTitle: Accedi a Hermes Cloud
+    signInWebappHelp: Accedi a Nous Portal da Impostazioni ▸ Provider, poi torna qui.
+    startAgain: Ricomincia
+    stepBackup: Backup di questo agente
+    stepRestore: Ripristino su {0}
+    stepUpload: Caricamento
+    transferCommand: Trasferisci su Hermes Cloud
+    transferHelp: Sostituisce un agente Hermes Cloud con questo. Nulla cambia su questo computer.
+    transferTitle: Trasferisci su Hermes Cloud
+    undo: Annulla
+    undoNote: Prima viene fatto un backup di {0}, così puoi annullare.
+    undoing: Annullamento…
+    undoneHelp: "{0} è tornato com’era."
+    undoneTitle: Annullato
   billing:
     amountValidation:
       decimal: "{0}: inserisci un importo in dollari con al massimo 2 decimali."
@@ -3537,6 +3590,8 @@ settings:
     autosaveFailed: Salvataggio automatico non riuscito
     builtinOnly: Solo integrate
     commaSeparated: valori separati da virgole
+    desktopReadAloudDesc: "Legge ad alta voce ogni risposta completata nel Desktop. È lo stesso interruttore del pulsante del compositore: si applica a tutte le finestre aperte e spegnerlo interrompe la risposta a metà frase. “Leggi le risposte ad alta voce” qui sotto vale per la messaggistica e la CLI."
+    desktopReadAloudTitle: Leggi le risposte ad alta voce in questa app
     disableF12Desc: Impedisce a F12 di aprire gli strumenti per sviluppatori. Ctrl+Shift+I (o Cmd+Opt+I su Mac) continua a funzionare.
     disableF12Title: Disattiva DevTools con F12
     emptyDesc: Questa sezione non ha impostazioni configurabili.
@@ -4016,7 +4071,7 @@ settings:
     sshKeyTitle: File di identità
     sshPortDesc: Vuoto = 22 o la porta di ~/.ssh/config.
     sshPortTitle: Porta
-    sshReachable: "Raggiungibile: {0} ({1}) — Hermes trovato"
+    sshReachable: "Raggiungibile: {0} ({1}), Hermes trovato"
     sshTestConnection: Prova SSH
     sshTitle: Connetti via SSH
     sshTrustHint: La prima chiave host presentata viene accettata e fissata; se cambia in seguito, la connessione viene rifiutata.
@@ -4199,6 +4254,7 @@ settings:
     upToDateTitle: Motore aggiornato
     updateAction: Aggiorna motore
     updateDetail: È disponibile una build più recente di llama.cpp ({0}) pronta da installare; hai {1}. I modelli continuano a funzionare durante lo scaricamento.
+    updateSameBuildDetail: Hermes ora integra llama.cpp {0} insieme ai file che servono per eseguirlo. L’aggiornamento riscarica il motore; i modelli continuano a funzionare durante lo scaricamento.
     updateTitle: È disponibile un aggiornamento del motore
     updating: Aggiornamento del motore…
     useAction: Usa
@@ -4264,7 +4320,7 @@ settings:
     builtinDesc: MEMORY.md e USER.md sono la memoria di Hermes, separata da qualsiasi provider esterno. Entrambi si caricano nelle sessioni per impostazione predefinita; i toggle memoria e profilo utente in Impostazioni › Memoria e contesto disattivano ciascuno. Un provider si aggiunge a questo livello; non lo sostituisce.
     builtinLayer: Livello integrato
     builtinMemory: solo memoria integrata
-    noProvider: Nessuno — solo memoria integrata
+    noProvider: Nessuno (solo memoria integrata)
     noProviderDesc: Hermes usa solo il livello integrato sotto. Scegli un provider esterno sotto Impostazioni › Memoria e contesto per aggiungerne uno.
     "off": Disattivato
     "on": Attivato
@@ -4492,6 +4548,8 @@ settings:
     about: Informazioni
     apiKeys: Strumenti e chiavi
     archivedChats: Chat archiviate
+    backup: Backup e trasferimento
+    backupOnly: Backup
     billing: Fatturazione
     gateway: Gateway
     keybinds: Scorciatoie da tastiera
@@ -4665,7 +4723,7 @@ settings:
     invalidShortcut: Non è una scorciatoia valida. Includi almeno un tasto modificatore.
     shortcutDesc: Richiede almeno un modificatore, ad es. CommandOrControl+Shift+Spazio.
     shortcutTitle: Scorciatoia di ingresso rapido
-    takenBy: Un’altra app usa già questa scorciatoia — scegline una diversa.
+    takenBy: "Un’altra app usa già questa scorciatoia: scegline una diversa."
   resetConfirm: Ripristinare tutta la configurazione ai valori predefiniti di Hermes?
   resetFailed: Ripristino non riuscito
   resetToDefaults: Ripristina valori predefiniti
@@ -5149,7 +5207,7 @@ shell:
     desktopVersion: Hermes Desktop v{0}
     failed: "{0} falliti"
     focusedSince: A fuoco da
-    focusedSinceTitle: Tempo da quando questa chat è a fuoco — non da quanto è in corso un turno
+    focusedSinceTitle: Tempo da quando questa chat è a fuoco, non da quanto è in corso un turno
     gateway: Gateway
     gatewayChecking: verifica in corso
     gatewayConnecting: connessione in corso
@@ -5211,7 +5269,7 @@ shell:
     updateInProgress: Aggiornamento in corso
     webhooks: Webhooks
     yoloOff: YOLO disattivato. Shift+clic lo attiva/disattiva globalmente.
-    yoloOn: YOLO attivo — approvazione automatica dei comandi pericolosi. Shift+clic lo attiva/disattiva globalmente.
+    yoloOn: "YOLO attivo: approvazione automatica dei comandi pericolosi. Shift+clic lo attiva/disattiva globalmente."
   windowControls: Controlli finestra
 sidebar:
   allPinned: Tutto qui è fissato. Sfissa una chat per mostrarla nei recenti.
@@ -5381,9 +5439,9 @@ sidebar:
     deleteTitle: Eliminare la sessione?
     deleted: Sessione eliminata
     deleting: Eliminazione…
-    draftSession: Bozza — non è ancora stato inviato nulla
+    draftSession: "Bozza: non è ancora stato inviato nulla"
     export: Esporta
-    finishedUnread: Terminata — da leggere
+    finishedUnread: Terminata (da leggere)
     handoffOrigin: Trasferito da {0}
     hideTabBar: Nascondi barra delle schede
     markRead: Segna come letto
@@ -5765,7 +5823,7 @@ statusStack:
     criterionLabel: Criterio
     dismissError: Scarta l’errore
     dismissLoop: Scarta il loop
-    dueWaitingForIdle: da eseguire — in attesa che l’agente sia libero
+    dueWaitingForIdle: da eseguire, in attesa che l’agente sia libero
     gateAttempts: "{0}/{1} tentativi"
     gateCommand: Comando
     gateLastExit: "Codice di uscita: {0}"
@@ -5875,7 +5933,7 @@ titlebar:
   hideRightSidebar: Nascondi barra laterale destra
   hideSidebar: Nascondi barra laterale
   layoutEditor: Editor del layout
-  layoutEditorTitle: Editor del layout — clic {0} ripristina il layout
+  layoutEditorTitle: "Editor del layout: clic {0} ripristina il layout"
   muteHaptics: Silenzia feedback aptico
   openSettings: Apri le impostazioni
   openStarmap: Apri il grafo della memoria
@@ -6093,6 +6151,8 @@ webhooks:
   fieldNamePlaceholder: ad es. github-push
   fieldPrompt: Prompt
   fieldPromptPlaceholder: Istruzioni per l’agente quando questo webhook si attiva (facoltativo)
+  fieldSignature: Firma
+  fieldSignatureHint: L’unico schema di firma che questa rotta accetta. Le consegne GitHub, GitLab e Linear richiedono il loro PIN dedicato.
   fieldSkills: Skills
   fieldSkillsPlaceholder: nomi delle skill separati da virgole (facoltativo)
   hint: Le modifiche agli abbonamenti vengono ricaricate all’istante quando il ricevitore è in esecuzione. Gli abbonamenti disattivati rifiutano gli eventi in arrivo.
@@ -6107,6 +6167,11 @@ webhooks:
   restartingGateway: Riavvio…
   search: Cerca webhook…
   secretOnce: Segreto (mostrato una sola volta)
+  signatureOptions:
+    generic: Generico (con timestamp)
+    github: GitHub
+    gitlab: GitLab
+    linear: Linear
   subscriptions: Abbonamenti ({0})
   toggleFailed: Impossibile attivare "{0}"
   webhookUrl: URL del webhook
