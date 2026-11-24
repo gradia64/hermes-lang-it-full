@@ -115,6 +115,15 @@ artifacts:
   zero: "0"
 assistant:
   approval:
+    access:
+      alwaysDescription: La cartella viene aggiunta alla sandbox di questo profilo. Hermes non chiederà più conferma per questa cartella in nessuna chat.
+      alwaysTitle: Consentire sempre questa cartella?
+      readOnly: Sola lettura
+      readWrite: Lettura e scrittura
+      timedOut: "La richiesta è scaduta: l’accesso alla cartella {0} non è stato concesso. Chiedi a Hermes di riprovare."
+      title: Accesso alla cartella
+    allow: Consenti
+    allowHint: Finché la sandbox non viene disattivata
     allowSession: Consenti per questa sessione
     alwaysAllow: Consenti sempre
     alwaysAllowMenu: Consenti sempre…
@@ -122,9 +131,17 @@ assistant:
     alwaysTitle: Consentire sempre questo comando?
     command: Comando
     commandDetails: Dettagli del comando
+    deny: Nega
+    denyReason: Motivo del rifiuto
+    denyReasonPlaceholder: Spiega a Hermes il motivo (facoltativo)
     gatewayDisconnected: Hermes non è connesso in questo momento. Il comando continua ad attendere la tua risposta (finché non scade il tempo di approvazione). Riconnettiti e inviala di nuovo.
     jumpToApproval: Approvazione necessaria
     moreOptions: Altre opzioni di approvazione
+    network:
+      alwaysDescription: Il sito viene aggiunto ai siti consentiti di questo profilo. Hermes non chiederà più conferma per questo sito in nessuna chat.
+      alwaysTitle: Consentire sempre questo sito?
+      timedOut: "La richiesta è scaduta: l’accesso a {0} non è stato concesso. Chiedi a Hermes di riprovare."
+      title: Accesso al sito
     openSafetySettings: Apri impostazioni di sicurezza
     reconnect: Riconnetti
     reject: Rifiuta
@@ -427,6 +444,7 @@ assistant:
     readAloudFailed: Lettura ad alta voce non riuscita
     readAloudFullResponseHint: "Maiusc+clic: leggi la risposta completa"
     refresh: Aggiorna
+    responseContinuing: Risposta in ripresa…
     responseStopped: Risposta interrotta
     restoreBody: Tutto ciò che viene dopo questo messaggio viene eliminato dalla conversazione e il messaggio viene eseguito di nuovo da qui.
     restoreCheckpoint: Ripristina checkpoint
@@ -1230,6 +1248,9 @@ composer:
   stopListening: Smetti di ascoltare e invia
   stopShort: Ferma
   stopSpeakingReplies: Smetti di leggere le risposte ad alta voce
+  switchProfileFailed: Impossibile passare a {0}
+  switchingProfile: Passaggio a {0}…
+  switchingProfileSlow: Connessione ancora in corso. I messaggi che invii ora restano in attesa e verranno inviati a questo agente.
   terminalSelectionMissingBody: "Riseleziona le righe del terminale (Ctrl/Cmd+L) prima di inviare: questa chip non ha testo originale."
   terminalSelectionMissingTitle: Selezione del terminale non disponibile
   themeSuggestions: Suggerimenti per il tema del desktop
@@ -1257,7 +1278,7 @@ composer:
   wakeWordListening: "Parola di attivazione: \"{0}\" (in ascolto)"
   wakeWordOff: "Parola di attivazione: \"{0}\" (disattivata)"
   wakeWordPausedVoice: "Parola di attivazione: \"{0}\" (in pausa durante la chat vocale)"
-  wakingProfile: Risveglio di {0}…
+  willSendTo: Invio a {0}
 connectorOffer:
   body: Accedi con un account Nous gratuito per mantenere su tuo account le app che hai collegato, come Gmail o Slack.
   heading: Mantieni le app connesse
@@ -2516,15 +2537,23 @@ notifications:
     view: Vedi
   more: "{0} notifiche in più"
   native:
+    accessReadBody: "Sola lettura: {0}"
+    accessReadWriteBody: "Lettura e scrittura: {0}"
+    accessTitle: Accesso alla cartella necessario
+    accessTitleNamed: "Accesso alla cartella necessario: {0}"
+    allowAction: Consenti
     approvalTitle: Approvazione necessaria
     approvalTitleNamed: "Approvazione necessaria: {0}"
     approveAction: Approva
     backgroundDoneTitle: Attività in background completata
     backgroundFailedTitle: Attività in background non riuscita
     creditsTitle: Crediti
+    denyAction: Nega
     inputBody: Hermes è in attesa della tua risposta.
     inputTitle: Informazioni necessarie
     inputTitleNamed: "È necessaria una risposta: {0}"
+    networkTitle: Accesso al sito necessario
+    networkTitleNamed: "Accesso al sito necessario: {0}"
     rejectAction: Rifiuta
     turnDoneBody: ""
     turnDoneTitle: Hermes ha terminato
@@ -2866,6 +2895,8 @@ profiles:
     removeFailed: Impossibile rimuovere la connessione remota
     removedMessage: "{0} ora viene eseguito su questo computer"
     removedTitle: Connessione remota rimossa
+    runHere: Esegui su questo computer…
+    sandboxed: In sandbox
     savedMessage: "{0} ora viene eseguito su {1}"
     savedTitle: Profilo connesso
     title: Connetti {0} a un host remoto
@@ -3071,6 +3102,10 @@ rightSidebar:
   tryAgain: Riprova
   unreadableBody: Impossibile leggere questa cartella ({0}).
   unreadableTitle: Non leggibile
+sandbox:
+  restarting: Riavvio della sandbox…
+  starting: Avvio della sandbox…
+  stopping: Arresto della sandbox…
 sendDiagnostics:
   cancel: Annulla
   close: Chiudi
@@ -4606,6 +4641,14 @@ settings:
         label: Il turno non è riuscito
     muteSoundsDesc: Silenzia i segnali automatici di completamento, parola di attivazione e ragionamento, il feedback aptico e i suoni delle notifiche di sistema. Le anteprime dei suoni e le risposte parlate continuano a essere riprodotte.
     muteSoundsTitle: Silenzia i suoni dell’interfaccia
+    phonePresence:
+      description: Cosa questa finestra comunica a Hermes sulla tua presenza. Un plugin di notifiche per il telefono decide cosa farne.
+      disconnected: Non connesso.
+      title: Questo computer per le notifiche sul telefono
+      unsupported: Le notifiche sul telefono non risentono dell’attività su questo backend.
+      watchingComputer: Finché una conversazione è aperta in questa finestra, Hermes viene informato di quando hai usato questo computer per l’ultima volta. Ultimo input {0} fa.
+      watchingWindow: Finché una conversazione è aperta in questa finestra, Hermes viene informato di quando hai usato questa finestra per l’ultima volta. Ultimo input {0} fa.
+      watchingWindowNoInput: Finché una conversazione è aperta in questa finestra, Hermes viene informato di quando hai usato questa finestra per l’ultima volta. Nessun input rilevato finora.
     test: Invia notifica di test
     testBody: Le notifiche funzionano.
     testSent: Test inviato. Se non compare nulla, controlla i permessi di notifica del sistema operativo e la modalità Concentrazione o Non disturbare.
@@ -5535,10 +5578,6 @@ skills:
     noReadme: Questa skill non ha un’anteprima di SKILL.md.
     noResults: Nessuna skill corrispondente trovata nell’hub.
     openLog: Apri log
-    pickerBrowse: Esplora tutto l’hub
-    pickerHide: Nascondi l’esploratore dell’hub
-    pickerHint: "Premi \"+ Aggiungi a questo agente\" su qualsiasi skill: viene installata e appare nell’elenco qui sopra."
-    pickerTitle: Skills Hub
     policyAllow: Installazione consentita
     policyAsk: Verifica prima di installare
     policyBlock: Installazione bloccata dalla policy
