@@ -2213,6 +2213,21 @@ messaging:
   approvedUser: "{0} approvato"
   approvedUsers: Utenti approvati ({0})
   approving: Approvazione...
+  catalog:
+    badges:
+      official: Ufficiale
+      verified: Verificato
+    disclosure: "Informativa:"
+    install: Installa
+    installFailed: Impossibile installare {0}
+    installed: "{0} installato"
+    installedDetail: Inserisci le credenziali per collegarlo.
+    installing: Installazione…
+    intro: "{0} è un plugin del catalogo di Hermes. L’installazione lo attiva; poi puoi inserirne le credenziali qui."
+    lazyOff: Le installazioni automatiche dei plugin sono disattivate (security.allow_lazy_installs), quindi Hermes non lo installa da qui.
+    notInstalled: Non installato
+    runCommand: "Installalo da un terminale:"
+    sectionTitle: Disponibili per l’installazione
   clearField: Svuota {0}
   connectingLive: Il gateway in esecuzione si sta connettendo con le nuove credenziali.
   credentialsSet: Credenziali definite
@@ -5131,6 +5146,8 @@ shell:
     manualDescription: Chiedi conferma prima delle azioni che richiedono approvazione
     "off": Disattivato
     offDescription: Esegui senza richieste di approvazione
+    perProfile: Per profilo
+    perProfileDescription: Le modalità di approvazione si impostano per profilo. Apri un bot o un profilo per cambiarne la modalità.
     smart: Intelligente
     smartDescription: Valuta automaticamente le azioni e chiedi solo quando necessario
     title: Modalità di approvazione
